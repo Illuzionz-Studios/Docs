@@ -1,0 +1,13 @@
+site_name: Illuzionz Studios Docs
+theme: 
+  name: material
+  custom_dir: theme/
+  logo: img/logo.svg
+  favicon: img/logo.svg
+  font:
+    text: Inter
+
+extra:
+  generator: false
+
+copyright: Copyright &copy; 2020 - 2021 Illuzionz Studios
