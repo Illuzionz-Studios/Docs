@@ -1,13 +1,71 @@
 site_name: Illuzionz Studios Docs
+site_description: The Official Illuzionz Studios Documentation
+site_author: Jamin Stratford
+copyright: Copyright &copy; 2020 - 2021 Illuzionz Studios
+ 
+
+# Wiki Navigation
+nav:
+  - Home: index.md
+  - Spigot Plugins:
+    - spigot-plugins/index.md
+    - Custom Fishing:
+      - spigot-plugins/custom-fishing/index.md
+      - Installing: spigot-plugins/custom-fishing/installing.md
+    - Custom Tab:
+      - spigot-plugins/custom-tab/index.md
+      - Installing: spigot-plugins/custom-tab/installing.md
+
+# Theme
 theme: 
   name: material
-  custom_dir: theme/
-  logo: img/logo.svg
-  favicon: img/logo.svg
+  language: en
+  custom_dir: theme
+
+  # Logos
+  logo: assets/img/logo.svg
+  favicon: assets/img/logo.svg
+
+  # Fonts
   font:
     text: Inter
 
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    # - navigation.sections
+  
+  # Custom Icons
+  icon:
+    repo: fontawesome/brands/github
+
+  # palette:
+  #   - scheme: default
+  #     toggle:
+  #       icon: material/weather-sunny
+  #       name: Dark Mode
+  #   - scheme: slate
+
+  #     toggle:
+  #       icon: material/weather-night
+  #       name: Light Mode
+
+# Extra options
 extra:
   generator: false
 
-copyright: Copyright &copy; 2020 - 2021 Illuzionz Studios
+extra_css:
+  - assets/stylesheets/extra.css
+
+# Git
+# repo_url: https://github.com/Illuzionz-Studios/Docs
+# repo_name: Illuzionz-Studios/Docs
+# edit_uri: ''
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
