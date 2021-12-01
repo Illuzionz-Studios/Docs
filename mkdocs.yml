@@ -1,7 +1,7 @@
-site_name: Illuzionz Studios Docs
+site_name: 'Illuzionz Studios Documentation'
 site_description: The Official Illuzionz Studios Documentation
 site_author: Jamin Stratford
-copyright: Copyright &copy; 2020 - 2021 Illuzionz Studios
+copyright: Copyright &copy; 2021 Illuzionz Studios
  
 
 # Wiki Navigation
@@ -9,12 +9,21 @@ nav:
   - Home: index.md
   - Spigot Plugins:
     - spigot-plugins/index.md
-    - Custom Fishing:
-      - spigot-plugins/custom-fishing/index.md
-      - Installing: spigot-plugins/custom-fishing/installing.md
+    # - Custom Fishing:
+    #   - Custom Fishing: spigot-plugins/custom-fishing/index.md
+    #   - Features: spigot-plugins/custom-fishing/features.md
+    #   - Installing: spigot-plugins/custom-fishing/installing.md
+    #   - Configuration: spigot-plugins/custom-fishing/configuration.md
+    #   - Command & Permissions: spigot-plugins/custom-fishing/commands-and-permissions.md
+    #   - Developers: spigot-plugins/custom-fishing/developers.md
     - Custom Tab:
-      - spigot-plugins/custom-tab/index.md
+      - Custom Tab: spigot-plugins/custom-tab/index.md
+      - Features: spigot-plugins/custom-tab/features.md
       - Installing: spigot-plugins/custom-tab/installing.md
+      - Configuration: spigot-plugins/custom-tab/configuration.md
+      - Command & Permissions: spigot-plugins/custom-tab/commands-and-permissions.md
+      - FAQ: spigot-plugins/custom-tab/faq.md
+      - Developers: spigot-plugins/custom-tab/developers.md
 
 # Theme
 theme: 
@@ -23,7 +32,7 @@ theme:
   custom_dir: theme
 
   # Logos
-  logo: assets/img/logo.svg
+  logo: assets/img/logo-full.svg
   favicon: assets/img/logo.svg
 
   # Fonts
@@ -35,22 +44,27 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.indexes
-    # - navigation.sections
+    - search.suggest
+    - pymdownx.highlight
+    - pymdownx.inlinehilite
+    - pymdownx.superfences
+    - pymdownx.snippets
+    - content.code.annotate
   
   # Custom Icons
   icon:
     repo: fontawesome/brands/github
 
-  # palette:
-  #   - scheme: default
-  #     toggle:
-  #       icon: material/weather-sunny
-  #       name: Dark Mode
-  #   - scheme: slate
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Dark Mode
+    - scheme: slate
 
-  #     toggle:
-  #       icon: material/weather-night
-  #       name: Light Mode
+      toggle:
+        icon: material/toggle-switch
+        name: Light Mode
 
 # Extra options
 extra:
@@ -67,5 +81,22 @@ extra_css:
 # Plugins
 plugins:
   - search
-  - git-revision-date-localized:
-      type: timeago
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+  # - git-revision-date-localized:
+  #     type: timeago
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.tabbed:
+      alternate_style: true 
