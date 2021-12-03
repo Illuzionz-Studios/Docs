@@ -21,6 +21,7 @@ nav:
       - Features: spigot-plugins/custom-tab/features.md
       - Installing: spigot-plugins/custom-tab/installing.md
       - Configuration: spigot-plugins/custom-tab/configuration.md
+      - Default Files: spigot-plugins/custom-tab/default-files.md
       - Command & Permissions: spigot-plugins/custom-tab/commands-and-permissions.md
       - FAQ: spigot-plugins/custom-tab/faq.md
       - Developers: spigot-plugins/custom-tab/developers.md
@@ -40,6 +41,7 @@ theme:
     text: Inter
 
   features:
+    - toc.integrate
     - navigation.tabs
     - navigation.instant
     - navigation.tracking
@@ -100,3 +102,4 @@ markdown_extensions:
   - attr_list
   - pymdownx.tabbed:
       alternate_style: true 
+  - pymdownx.snippets
