@@ -1,4 +1,5 @@
 site_name: 'Illuzionz Studios Documentation'
+site_url: ""
 site_description: The Official Illuzionz Studios Documentation
 site_author: Jamin Stratford
 copyright: Copyright &copy; 2021 Illuzionz Studios
@@ -79,18 +80,6 @@ extra_css:
 # repo_url: https://github.com/Illuzionz-Studios/Docs
 # repo_name: Illuzionz-Studios/Docs
 # edit_uri: ''
-
-# Plugins
-plugins:
-  - search
-  - minify:
-      minify_html: true
-      minify_js: true
-      minify_css: true
-      htmlmin_opts:
-          remove_comments: true
-  # - git-revision-date-localized:
-  #     type: timeago
 
 markdown_extensions:
   - pymdownx.emoji:

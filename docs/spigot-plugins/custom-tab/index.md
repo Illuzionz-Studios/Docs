@@ -17,7 +17,7 @@ Take your time to read through this wiki to understand how the plugin works and 
 Take a deeper look at the plugins features [here](features)
 
 ## Downloads
-:octicons-tag-24: 1.2.8
+:octicons-tag-24: 2.0
 
 [Purchase on Spigot](https://www.spigotmc.org/resources/78200/){ .md-button }
 
