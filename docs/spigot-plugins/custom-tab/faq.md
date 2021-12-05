@@ -13,4 +13,4 @@ and you might just find a solution to your problem.
     This is another bug which sometimes occurs when adding players to the tab. This is currently
     being looked into and will be fixed soon.
 
-<!-- ## Common Questions -->
+[Don't see your question here? Join our discord for support!](https://discord.gg/DbJXzWq)

@@ -1,4 +1,3 @@
 # Developers
 
-!!! info
-    The developer API is still in development
+*This is coming soon..*

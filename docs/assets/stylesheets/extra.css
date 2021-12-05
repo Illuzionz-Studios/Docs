@@ -3,6 +3,10 @@
     --md-accent-fg-color: #64B5F6;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /* background-color: red; */
 }

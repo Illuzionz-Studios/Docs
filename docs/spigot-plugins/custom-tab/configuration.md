@@ -1,11 +1,12 @@
 # Configuration
 This page has extensive information on how to configure the different aspects of the plugin. All default files
 in the plugin come with thorough comments to help get you started configuring. This page will break down
-the sections of the config for more in-depth of what they do and help. To just view default files view [here](../default-files).
+the sections of the config for more in-depth of what they do and help. Some text may have annotations
+you can click on for more info, others may have comments that you can also read. To just view default files view [here](../default-files).
 
 ## Main Config
 The first file to look over is the main file `config.yml`. This just contains basic options
-that apply throughout the plugin. Hover over options for a detailed explanation.
+that apply throughout the plugin.
 
 ``` yaml title="config.yml" linenums="1" 
 settings:
@@ -16,106 +17,773 @@ settings:
 tab:
     # The default tab to show players if
     # they don't meet any requirements
-    default: default
+    default: default # (2)
 ```
 
 1.  This is the locale file to use for the plugin. It can be found
     in `locales`.
 
+2.  This is the default tab to display (taken from /tabs) when a player
+    doesn't meet any of the requirements for any tab.
+
 ## Custom Skins
 This plugin has the ability to display custom skins in tab elements. They are
-defined by a value and a signature. Custom skins can be defined in the `skins.yml` file
+defined by a value and a signature. Custom skins can be defined in the [`skins.yml`](../default-files) file
 by name where you can reference them later in other configs. Custom skins can be found/created
-at [this](https://mineskin.org/) website.
+at [this](https://mineskin.org/) website. They are defined in the config like so.
 
 ``` yaml title="skins.yml"
-# This file contains mapping for custom skins to be used in the tab.
-# Custom skins are used via value and signature data assigned from a skin.
-# These values can be obtained from this site here https://mineskin.org/
-# The format as is follows
-# <name>:
-# value: <skin value>
-# skin: <skin signature>
+skinname: # (1)
+    value: <VALUE OF SKIN> # (2)
+    signature: <SIGNATURE OF SKIN> # (3)
+```
+
+1.  The identifier of this skin. This is the name to be used when referencing it
+    from other configs.
+
+2.  The value of this skin. Copied from the skin value section from [https://mineskin.org/](https://mineskin.org/).
+
+3.  The signature of this skin. Copied from the skin signature section from [https://mineskin.org/](https://mineskin.org/).
+
+??? example
+    ``` yaml
+    discord:
+        value: eyJ0aW1lc3RhbXAiOjE0ODU4MjY5MDcxMDQsInByb2ZpbGVJZCI6IjQzYTgzNzNkNjQyOTQ1MTBhOWFhYjMwZjViM2NlYmIzIiwicHJvZmlsZU5hbWUiOiJTa3VsbENsaWVudFNraW42Iiwic2lnbmF0dXJlUmVxdWlyZWQiOnRydWUsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kNmQ5ZjI1YTdhNGU2Yjc1Y2Y4ZWFhMWRhZWI0N2ZjOTQ4YzU3MTgyNDQxNTY3NTVjODVhNWU2OGI5OGMzZTUifX19
+        signature: v13zgC1XOdRm5icNeNrg19hcwmGnNFEIs3zKEJqPIJ9MACCFlk8lv9U6d32lPaAc1cPZLcbWpqWzVPyZRUT2qhQrG7+iq+T3Kl64mEaNCzRRVLMGZQj3sveHUd6UCXHQh2KUyoZ6T4zJj90y/0wJW8Mt8NZXxKawxdQEjgxPeqEM4bB3iwYqA5IPWPPvgtdhqy4ZOFITtAhx+0rZ6piwWwrRCs2G0WawfN0pdGaq/c4X5JxCDJftFTeo7+3rs41GXJilGnRE8xt1ANPieS2UNCp4ffu+/tt9yC6IkSQUSHs8NHXi/3bkRZ6LSQ4bQgupaiGrutiEhZO9JOBJGs53C045VrndQX3Hw9njCB4sb5cVkL1ZPYSpK6ou4quHvfaj9DKoG/A3JB9DMwlFGA4odFwu2iz+E/JQebd6OUtW/k++q7hwpt/dfOEm/OdEpsJy8qVTtiCNqEj145wyjnvyhuqi3sh5tr5GQfyx7fahhyjhtyPB+E3ME8AA0DcLNeDpA0CNoGF0DqSIwp52srGzATqgV8hK06QJIJCdsxzuMFSDiV1xtBdDSTrhBa88HCCKNmpxb4HqqiE6QY8SvqJyllKlYOTbfM1SdlcJ5Jk+76c80R1XOAjibeyYfhYsK2vJSysvoLOlHTbNLwHZpzmTDfHGIdl2oH+lokZP++JCGp8=
+    ```
+
+## Player Groups
+Custom player groups can be defined in order to provide a sorting system for players. They
+can be assigned with permissions and have options like the weight in the tab and how to
+display that player in-game. Players can have multiple groups but are prioritised
+by weight. They are defined with the format below.
+
+``` yaml title="groups.yml"
+groupname: # (1)
+    # Permission for player to have this group. Set to blank here so all players have it
+    permission: '' # (2)
+    # The priority of this group, the player will have the group they qualify for that
+    # has the highest weight. A higher weight is a higher priority
+    weight: 1 # (3)
+    display:
+        # How to display this group on the tab
+        tab: # (4)
+            animations: # (5)
+                - '&8Member &7%player_name%'
+            interval: -1 # (6)
+```
+
+1.  This is the name of the group. This doesn't matter as isn't used anywhere else.
+
+2.  This is the permission required for the player to have this group. If it is
+    left blank like so that means every player will have this group.
+
+3.  This is the weight of this group. If a player has multiple group their assigned
+    group will be the one with the highest weight. If the number is higher that group
+    will be prioritised. E.g, A weight of 99 has higher priorty than a weight of 56.
+
+4.  This is the Dynamic Text element to display in the tab for this group. As explained later
+    this is passed through the variable `{group_format}`.
+
+??? example
+    ``` yaml
+    owner:
+        permission: tab.owner
+        weight: 99
+        display:
+            tab:
+            animations:
+                - '&4Owner &c%player_name%'
+                - '&cO&4wner &c%player_name%'
+                - '&4O&cw&4ner &c%player_name%'
+                - '&4Ow&cn&4er &c%player_name%'
+                - '&4Own&ce&4r &c%player_name%'
+                - '&4Owne&cr &c%player_name%'
+            interval: 10
+    ```
+
+    ![Showcase1](../../../assets/img/gif/Showcase1.gif)
+
+## Tab Columns
+The Tab is comprised of Tab Columns. These are a set of elements that will display. They have the nice feature of pagination
+so you can have multiple pages of elements. Each column can also have a title element to show what each column displays. So simply
+a tab column is a list of elements with a title at the top. They are defined by the following format
+
+``` yaml title="columns/column.yml"
+# Id of this column for referencing it
+name: "features"
+
+# Page options
+page:
+  # If enabled, the total number of elements go over
+  # the below 'elements' option, it will create a new
+  # page and display the remaining elements on all the
+  # new pages
+  enabled: true # (1)
+  # Maximum amount of pages to create. If
+  # items try to create more than this amount of
+  # pages it will stop at this page
+  max: 5 # (2)
+  # Maximum amount of elements per page. If the
+  # elements go over this they will flow to the next
+  # page
+  elements: 20 # (3)
+  # Interval in ticks between scrolling pages. Only applies
+  # if there is more than one page
+  interval: 100 # (4)
+  # This is the text element that is displayed at the bottom that indicated the
+  # current and maximum pages.
+  text: # (5)
+    # The custom skin for this tab element. There are multiple ways they're
+    # defined. You can set the 'name' element here which will take
+    # a skin from the skins.yml file. Otherwise you can directly specify the
+    # 'value' and 'signature' like in skins.yml but right here under 'skin:'
+    skin:
+      name: oak_wood
+    # These are the different animation frames for
+    # this text. Each text element is iterated through
+    # to create a dynamic animation.
+    animations:
+      - "&7{current_page}&8/&7{max_page}"
+    # This is the interval (in ticks) between updating
+    # animation frames. This is limited by the tab update
+    # interval. Recommended being -1 if only
+    # has one frame as doesn't actually animate
+    interval: -1
+
+# The title of this tab column
+title: # (6)
+  # The custom skin for this tab element. There are multiple ways they're
+  # defined. You can set the 'name' element here which will take
+  # a skin from the skins.yml file. Otherwise you can directly specify the
+  # 'value' and 'signature' like in skins.yml but right here under 'skin:'
+  skin:
+    name: red
+  # These are the different animation frames for
+  # this text. Each text element is iterated through
+  # to create a dynamic animation. Colors are supported here
+  # along with 1.16+ HEX codes. Hex codes can be used with
+  # '&#111111'. Here is a good tool for generating gradient
+  # text. https://rgb.birdflop.com/
+  animations:
+    - "&c&lTab Column Title"
+    # This is the interval (in ticks) between updating
+    # animation frames. This is limited by the tab update
+    # interval. Recommended being -1 if only
+    # has one frame as doesn't actually animate
+  interval: -1
+  # This specifies if the text will be centered. This is good
+  # for aesthetics like the title where you want it to be center
+  center: true
+
+# Text elements to display for this column
+text: # (7)
+  # These are the different text elements in
+  # the column. The key doesn't matter and items are put
+  # in the order they are entered
+  1:
+    # These are the different animation frames for
+    # this text. Each text element is iterated through
+    # to create a dynamic animation. Colors are supported here
+    # along with 1.16+ HEX codes. Hex codes can be used with
+    # '&#111111'. Here is a good tool for generating gradient
+    # text. https://rgb.birdflop.com/
+    animations:
+      - 'First Element'
+    # This is the interval (in ticks) between updating
+    # animation frames. This is limited by the tab update
+    # interval. Recommended being -1 if only
+    # has one frame as doesn't actually animate
+    interval: -1
+  2:
+    animations:
+      - '&cSecond Element'
+      - '&4Second Element'
+    interval: 20
+```
+
+1.  If this is set to true than if elements are more than the allowed elements extra pages will be created.
+
+2.  This is the maximum amount of pages to create.
+
+3.  This is the number of elements per page. It controls how long each column is, 20 is recommended
+
+4.  This is the interval (in ticks) between changing pages.
+
+5.  This is the [tab item](#tab-item) to display page information. It is displayed
+    at the bottom of the column where there is more than 1 page.
+
+6.  This is the [tab item](#tab-item) to display at the top of the column if titles
+    are enabled for the tab.
+
+7.  This is a list of [tab items](#tab-item) that will display on the tab column. Each is defined
+    by an identifier. This doesn't matter as they are just added in the order they are defined.
+
+??? example
+    ``` yaml
+    name: "features"
+
+    page:
+        enabled: true
+        max: 5
+        elements: 20
+        interval: 100
+        text:
+            skin:
+                name: oak_wood
+            animations:
+            - "&7{current_page}&8/&7{max_page}"
+            interval: -1
+
+    title:
+        skin:
+            name: red
+        animations:
+            - "&c&lFeatures"
+        interval: -1
+        center: true
+
+    text:
+        1:
+            animations:
+            - '&#084cfb&lG&#1d61fb&lr&#3176fc&la&#468bfc&ld&#5ba0fc&li&#6fb4fc&le&#84c9fd&ln&#98defd&lt&#adf3fd&ls'
+            interval: -1
+        '2':
+            animations:
+            - '&#1d76fb▌ &#2578fbA&#2c7afbn&#347cfbi&#3c7ffcm&#4481fca&#4b83fct&#5385fce &#5b87fcy&#6389fco&#6a8bfcu&#728dfcr &#7a90fdt&#8292fde&#8994fdx&#9196fdt'
+            - '&#fb6a60▌ &#f46d6aA&#ed7075n&#e6737fi&#df768am&#d87994a&#d17c9ft&#ca7fa9e &#c281b4y&#bb84beo&#b487c9u&#ad8ad3r &#a68ddet&#9f90e8e&#9893f3x&#9196fdt'
+            interval: 20
+        '3':
+            requirement:
+            type: region
+            value: region1
+            animations:
+            - ' '
+            interval: -1
+        '4':
+            requirement:
+            type: region
+            value: spawn
+            animations:
+            - '&c&lConditional Text'
+            interval: -1
+        '5':
+            requirement:
+            type: region
+            value: spawn
+            animations:
+            - '&c▌ I only appear in spawn!'
+            interval: -1
+        '6':
+            animations:
+            - ' '
+            interval: -1
+        '7':
+            animations:
+            - '&b&lCustom Skins'
+            interval: -1
+        '8':
+            skin:
+            value: ewogICJ0aW1lc3RhbXAiIDogMTYzODMzMTE3NDI2NCwKICAicHJvZmlsZUlkIiA6ICI2MzMyMDgwZTY3YTI0Y2MxYjE3ZGJhNzZmM2MwMGYxZCIsCiAgInByb2ZpbGVOYW1lIiA6ICJUZWFtSHlkcmEiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzk2ODJjOTM1MmQyMGM4NWUwZWRkOWMwZWExMGY3NDQwZjE3NGI2YjAxMzMyODY5NWZmZTBmOGNiZmY0ZmM4MCIKICAgIH0KICB9Cn0=
+            signature: Wkc6UVNtcmB7dCUcUnbefPJ9+SrFSzJSdCp/c3XxhIA703MImbvF7Iy0p/nEQ0dWNzkzfvu7GcRI/zU61TjLYxzP2VrTbtHnxlsV5Rer/tcUk4M5KZGUxW+SL1K/HMl/1PLZ5KMBKQ9TO0kSPiYvAczVjYHACkYcgE34YJadmqGDrSObdthysVao/od1/BpDtqUHrpj89g5/R+kocAhI6YumImVNBI/vFabnXoindH8kCr/jlrRaRgJn2r1+woWMlT3gJvdrT+bpJwf789/pAOqpHwvzPxnrI+1jQkODpWJF4mpE7NvVYKNb7UyHYChQUlP1CNV1GqKaXaKrQqDWQ2LuhKxsQ/QK5VHbKCWXsrdqOI8KDXpztCgbJCasHsK2SblIIvXwgImvNIJEu7fFxUm1VuEbljFwKv6LXm7jm0Hmj9/4x8QviGUSCu3CAHvKdXf0OAtVrP9QO/x20mFxkeivy4J14OvMj40BTC/BqLTq4SbzLNMAjXwqJqeNywNyzCvmq2BtT+93rHb5XhmbmF/yGbYHQrnumsqU5ON9mdZ88aJy+XfNMZ9UfS0quNzW4eLWvr4NJVEMcVNkNYUsRmG+sAbl71ScJRZfG41HlSSbOXY3YzNBfoWBTLArLfq+r9rsHw0Cnpv8XfVYVTbbmeHTCOdoKOZrLMH1h8C/vZM=
+            animations:
+            - '&b▌ Display custom skins'
+            interval: -1
+        '9':
+            animations:
+            - ' '
+            interval: -1
+        '10':
+            animations:
+            - '&a&lPing'
+            interval: -1
+        '11':
+            ping: ONE
+            animations:
+            - '&a▌ Set the ping of'
+            interval: -1
+        '12':
+            ping: TWO
+            animations:
+            - '&a▌ elements like so'
+            interval: -1
+        '19':
+            animations:
+            - ' '
+            interval: -1
+        '13':
+            animations:
+            - '&d&lInfo'
+            interval: -1
+        '14':
+            animations:
+            - '&d▌ Feel free to browse the'
+            interval: -1
+        '15':
+            animations:
+            - '&d▌ wiki to find out how'
+            interval: -1
+        '16':
+            animations:
+            - '&d▌ powerful the plugin'
+            - '&d▌ &5p&dowerful the plugin'
+            - '&d▌ p&5o&dwerful the plugin'
+            - '&d▌ po&5w&derful the plugin'
+            - '&d▌ pow&5e&drful the plugin'
+            - '&d▌ powe&5r&dful the plugin'
+            - '&d▌ power&5f&dul the plugin'
+            - '&d▌ powerf&5u&dl the plugin'
+            - '&d▌ powerfu&5l &dthe plugin'
+            interval: 5
+        '17':
+            animations:
+            - '&d▌ really is!'
+            interval: -1
+    ```
+
+    ![Showcase5](../../../assets/img/gif/Showcase5.gif)
+
+## Tab Lists
+Tab Lists are another type of Tab Column excpet instead of speicfy elements it's a list of elements and you specify how
+each element is represented. It has the same pagniation features for multiple pages and the ability to specify a title to
+display at the top. They are defined the same as tab columns except with some extra options and the text is done differently.
+
+``` yaml title="lists/list.yml"
+# Id of this column for referencing it
+name: "online_list"
+
+# Page options
+page:
+  # If enabled, the total number of elements go over
+  # the below 'elements' option, it will create a new
+  # page and display the remaining elements on all the
+  # new pages
+  enabled: true
+  # Maximum amount of pages to create. If
+  # items try to create more than this amount of
+  # pages it will stop at this page
+  max: 5
+  # Maximum amount of elements per page. If the
+  # elements go over this they will flow to the next
+  # page
+  elements: 20
+  # Interval in ticks between scrolling pages. Only applies
+  # if there is more than one page
+  interval: 100
+  # This is the text element that is displayed at the bottom that indicated the
+  # current and maximum pages.
+  text:
+    # These are the different animation frames for
+    # this text. Each text element is iterated through
+    # to create a dynamic animation.
+    animations:
+      - "&7{current_page}&8/&7{max_page}"
+    # This is the interval (in ticks) between updating
+    # animation frames. This is limited by the tab update
+    # interval. Recommended being -1 if only
+    # has one frame as doesn't actually animate
+    interval: -1
+
+# The title of this tab column
+title:
+  # The custom skin for this tab element. There are multiple ways they're
+  # defined. You can set the 'name' element here which will take
+  # a skin from the skins.yml file. Otherwise you can directly specify the
+  # 'value' and 'signature' like in skins.yml but right here under 'skin:'
+  skin:
+    name: green
+  # These are the different animation frames for
+  # this text. Each text element is iterated through
+  # to create a dynamic animation. Colors are supported here
+  # along with 1.16+ HEX codes. Hex codes can be used with
+  # '&#111111'. Here is a good tool for generating gradient
+  # text. https://rgb.birdflop.com/
+  animations:
+    - "&a&lOnline &2%server_online%"
+    # This is the interval (in ticks) between updating
+    # animation frames. This is limited by the tab update
+    # interval. Recommended being -1 if only
+    # has one frame as doesn't actually animate
+  interval: 5
+  # This specifies if the text will be centered. This is good
+  # for aesthetics like the title where you want it to be center
+  center: true
+
+# What the list consists of. Here put
+# the element. Can put custom ones from addons
+# Types: online_players
+type: online_players # (1)
+
+# In what order to display elements
+# Put a custom sorter
+# Sorters: distance, number_variable, weight
 #
-# This skin can then be used anywhere where a text element
-# for the tab is defined by
-# skin:
-# name: <name>
-#
-# Some defaults are included here such as colors
-dark_red:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTU0MTc1MSwKICAicHJvZmlsZUlkIiA6ICIzOWEzOTMzZWE4MjU0OGU3ODQwNzQ1YzBjNGY3MjU2ZCIsCiAgInByb2ZpbGVOYW1lIiA6ICJkZW1pbmVjcmFmdGVybG9sIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EzN2Q5MTBiZTNkZjc1ZTMyNDZmYWM1OGFlNjkzY2I4ZGM2YmQ2OTdmZWYzZDNiNDA3NTlkZjZiNDJjZmRlYyIKICAgIH0KICB9Cn0=
-  signature: QI3Qo/8LkGzeJYiZ/jqO7cYI5e+xVHpwZGXUeNmIPPwTlCYdHSnCmkB0Xrd4skRu8bg7qaHMAjpQJxmn0InRWj5Y+zRvJc0IyeqkSV8G3PWI5OnZRFudJoHaVNOwbug1ZG3BkkPfmZJUMPdcrHxSsc06fei8RNzSKCc7F40OaDZez4lSvTLmJjrtg4RZm6d936Lk2dfDFOEDd2Sas3TrBuhuZ1673h8DVFPCXbSu7uRhf1Uma8ShlYhJnl606xpbGjpydUPAVMK5h/kU46UUeIZe1iZKf5Vepa+z4KkTnhxql+XoIsmEsLqRyQIcKFMp+l4eN/jznAeqMAaXf5E4Q6PuPgxFsAWYv0zSj3yd1YjdNALuqXmUhmuM292daIyIUbAdWOnmN04l0Ttws5KhLo8zNXXgGtCA0C1Kwj/3Wqt2LoMhJLvTbErfidVCD6jTAzklog086L1kXYXmUr1jZpK70rkfE9PudOWHbfa2Rbrq7eVlqr2EZj8pKMIGYyPqmQK9qAo2aol1JOcPNWTu7mBLdm31Q+9LRpzvZOG5FLS72xYOmTH/EbepECXmXjVKql7sEm41XXX5JkeByuzKZmX5XGSRFMKVc2pEfGwKDLkQSRL3AcBIvIOGGDNKpwWZAYFG0mAvp0QVbcw4H8BK9MXVAxl+SX9TvcuvNHhxzmk=
+# distance: The closest players to you are near the top
+# number_variable: A higher number appears higher
+#                  Taken from 'sort-variable'
+# weight: Uses weight taken from the player group
+#         See 'groups.yml'. Higher weight appears at the top
+sorter: weight # (2)
 
-red:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTc0NjgwMCwKICAicHJvZmlsZUlkIiA6ICI2MWVhMDkyM2FhNDQ0OTEwYmNlZjViZmQ2ZDNjMGQ1NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGVEYXJ0aEZhdGhlciIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS80ZjRjMzhiMDA4OGMyY2MyZTU3NWM1MzlhYTMxYjM4NzczMzUxNTllYzc4MjIwYmY4MTZhMDU4NWM4OTU4MDM1IgogICAgfQogIH0KfQ==
-  signature: C4e/FXlaZtzQO0FKLQt32WKG8cbi93BGkEolrkecMNxv/tx94VjFNtL7fgsLVnR5gw3iUb2VRDMsC1iaa7aIsmVUMzxFjPzWB1zhjvv4nzP+N+NzELZWrVHMwxo467pUSnG5WG+rTVEL/K3/9rES/j4Jvnp9SAw1DnFB7kswDbzbKXtS9TqGhODw8H6Mr73lz8u0kspSKwQKoEWyYou0mI+c+VHfmtPdxhqieYfqid4m8Vo/MMKnFDvM2jfOKJcGxtf91ojvdE/Y08TAqa2EdgtKX9h5SwdaljC/5XzJdfC0Q8SGj5c9IVgAlT9RNHob6PW/8qq53eA32Cy6DyYSqB9BbKK23EnUARndO1lpZKXfpmioc69T0F2xZJR7yanBBmEXd0HH9iPZ0naKkdpbnfni8vzsHndz2nj8VoaIQHBYi+F7XiLZb9TWiW+tDxDHxqamKJiD9IWa8hUMG3KKVK6+KI05Dcvu2B8ZaRb5Pi/g1iuprNr+P3O0O1nEiLjwGgMFAHLtka/5a639srSpPOgfR3ReADxeTX54G/nf30K1zYZig5dyxKNxe4vzofUr2io3sn3ScTwQoXbNpqncUuF3qmuaXQRdNDR1EYVlHkXbk5EOavp69b5dGSr5bQx6dotaqrv4MqqWht+XoV3AFb707Js2LSTOkchJSNouefU=
+# This will be used for number_variable
+# to sort by number. Can use placeholders
+# so the value of the placeholder is used
+sort-variable: "" # (3)
 
-gold:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTU3MDk1NywKICAicHJvZmlsZUlkIiA6ICI1ZWE0ODg2NTg2OWI0Y2ZhOWRjNTg5YmFlZWQwNzM5MCIsCiAgInByb2ZpbGVOYW1lIiA6ICJfUllOMF8iLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjRjMWYxZWI3ZWFiYWM5MmMxYjQ3NTVkNWZlYThjM2YwNTNjMTEyNjFiY2JiMzZmNDI0NmExOGE5YTZhYmQ2OCIKICAgIH0KICB9Cn0=
-  signature: mN9jITw7DXPj4Jk/QQhPBjE3o+GTHjKaMeLr8JlUdNKfAtDQEQqQt8RPjKJl6Mlh4eqxCcy8gJpJrDlOwtfjV3YIxsa7KOPdHHBXrNoHcE544uLug/f68/X1CPztjTBSZfA8mXaCgRoRaSpLl5sC5TgVO9gxGrAo6Nt9M+a5GkAaq5qphP8A0IRFwVmOpzBOS72Z5uMWGdoTfkx3Bz/b1dOJKGSCD5S7xFHb5AezPLcfyJk2/PBxlHIBS0qE9QB8pQhsUxpK+6sq6xnKrOwJ+BkRm9RcYfr0uAZnYzx9sId/r2pTJ5FERpdJw29sy3s+yPuM1cNDBvJrWSCicL+XhYrBlxUrqfTLzGfjrkwxSdEWjL/Nnj+2YkbcTg2Oo2a6ituT1GHQNqiDVggytSa6WjjZhKkZIJ3J9glGIVVJCg5vjydjZxHN2N9NHo5+0OeHxNwel7C2fyuFoGG3BOrjww3IEKTqmlBhPMAH/YrhVWQ78GXXGqaSOr7IX/Dg9FBPrmXn4UnVJeVi4MLSPfB5S4Hhy9mXdtWFiQhcgZuM34+z7GfosnQo5DGQQr4MvLvNYW4SXnmxrLYsCFPCTncKQo91FuIxIoQtmUDUlV1TsWERtlZrHD2S17Z+Ps8EhRFxIyz3lM1R6ISOyMCom3VJbImxgE12R8kMlEc3oS1A6ZU=
+# Text for each element in the list
+text: # (4)
+  # These are the different animation frames for
+  # this text. Each text element is iterated through
+  # to create a dynamic animation. Colors are supported here
+  # along with 1.16+ HEX codes. Hex codes can be used with
+  # '&#111111'. Here is a good tool for generating gradient
+  # text. https://rgb.birdflop.com/
+  animations:
+    - '{group_format}'
+    # This is the interval (in ticks) between updating
+    # animation frames. This is limited by the tab update
+    # interval. Recommended being -1 if only
+    # has one frame as doesn't actually animate
+  interval: 20
+```
 
-yellow:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTgzMTgxOCwKICAicHJvZmlsZUlkIiA6ICJkODAwZDI4MDlmNTE0ZjkxODk4YTU4MWYzODE0Yzc5OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJ0aGVCTFJ4eCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9iYjQ1NDA2OGM0MjQwNDVhYTFiMmRiYTRmNzhkMWRhODM4MGQzMDM0N2Y0MzJhYmRhZTJlNjc5MzU3ZWM4YzYzIgogICAgfQogIH0KfQ==
-  signature: BTeecnOj/9PP93jHqB8pwiuEbG2N24MH7sXVQco7jT/yAdOsBR/KikIDT84NQRCpZV7WwJpgtcfM7D5Hy8Dq7LJCfCECHA42C75HT1FJZEjHaNQGaPsux1xtP6zMfQaC4CAzyh4GZS5Qtt2l8LtqH4mzuSi8s3wId1WKFrC32Sau0GpI6iWkA2+MLtiq596UvuS1g6WkhHmsSXte3W6WwxKm3TPH4l4AxA5fJfB43dGRUBErb0IYosg3ZmWDIzovUYfkXERn8ZrVQ+B2s78lx6VEMujyEesZXC+W6ndtI3TOyukfad1XEobCAVSd14nNAKsu7ouNhOVuHGxIOPtqbjX3qGBpbmjjDSbkXdvn9KhLh1O1dAliEdxX4RdG46K6LtGKrzYlufik7hmuIO+IHtd1MgCeitJbastRorJJl58tLeKUTD/NZwjmXDODUVtLagNihbMaNvIwFNIdHu9rBBEMgPAdbRp5zj/VrmcJ59VqQlKHutYvhfsk+YqAYI/8lxVujUDxxJDr2iUrvIx9qcajdE/p26H3KYvwvQ+RPQehBIFC6XcMNPwQ6S3JBSjsNNG43jLdM0//2F55QO8YdrveAsznnE2VC45jmei26SR34V4Q4/Xrkh4iFymWaOtuOyiKqrWN7VX38BuxK04K56u8d4J0wLxzHmJ+XrQKZCA=
+1.  This is the type of this list. Currently the only type is `online_players` which is a list of online players.
 
-green:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTY4NjAwMCwKICAicHJvZmlsZUlkIiA6ICI3MzgyZGRmYmU0ODU0NTVjODI1ZjkwMGY4OGZkMzJmOCIsCiAgInByb2ZpbGVOYW1lIiA6ICJCdUlJZXQiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDFlMTUxZTYzNmYzMWZjNGZhYjAyODUxZmZhNTMyMzdmNjBkZGY1YWU2YzU0ZDhkZDlhZTgzZmMzODg4MTZhZiIKICAgIH0KICB9Cn0=
-  signature: C6Uoga81Sl3GZ0bICjddbwHfnOEJfgHzMgCg9GdZ6OmS5fW0ilopjqElEGfrVIODsI8pJW8ycxOqupsRMR9xs3skWyQxrNGzVEhKkuoWB4EBiX4SLv1g1FnRHZjmiXvd+dam+jWHwQWmSoLnzipXfvNgKQGlCIDq3vFZm2pkW5pLoviTI5MkRx0k2PGk7fyF4wiHVoejekzwwPDbWxNHaqVqgP1ZoZiVYUaOZbgqtCGCfPKR+YIlecwoIsBBdlfc/Ndm3teDh7HJSACRAP+A4vQJa94t6GfPknzfc/TNi98UvlTHwAFlU/8FexoIUpz4JRRF8VsHCn/h+2WvhntdzbbisluHfvX9HQzmBc3nDpe5ncwGyhD0fbIjOu2kZssFRaXu0tV8Sso9puCV6q8Ad2jDoJcjni7ZpiAx8MwJcjzNqMfrwSoB27vYs2jNEKMiixCGMtMbWxpomHGA+91+LzhZPcxKM6eJ5ZI+azjdUTDzyYum+BQz661qtOb4TfLB9GBWOgfrlRDlbPN8iKQa5NkI8jLGm8zO5Ew/bMJ6b/k8sSglAq+owO/GGcj8PZMjaZBXq1VCe5qOVekXkT4SDGOdNn3kpdxuNrQhXSIB2GAHZl3O7IEAFxsLiEK/p3CgM9sfGUSiAO8ow2TuN/mC4dlPoRhSpMyjxb6TYDesT54=
+2.  This is the sorter for the list. The function is defined in the comments.
 
-dark_green:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTQzMTAzNywKICAicHJvZmlsZUlkIiA6ICJmMTA0NzMxZjljYTU0NmI0OTkzNjM4NTlkZWY5N2NjNiIsCiAgInByb2ZpbGVOYW1lIiA6ICJ6aWFkODciLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTE2YmYxMjhiNTFjOGFmNmIxMTVhZGViOWE0ZDk4NzBmYjJkMGE5ZGRlMjA3ODhiZDM0MjZkMDQ1OWI2YjJjMiIKICAgIH0KICB9Cn0=
-  signature: BPJ8FLXLFgsIKUJBYafNgilxEtDq1qeG4vPJLD1pK1lPvwz8SxfzSZQPsGG/wk9MPh9lx4FAhsucX7sWR9+Zk4N0uROzSL/fJV+FgeyAC/LaZwG9hejT5gJ3yPs67jC0eOlW+f1hq2n0t/SaS36KN1PCl1SSyqmZsuMtjair1sczSf8nUSz7pnWS3GbwW+YOr9+hT6xQZW6y6Ho8zFzfbLbi4emBc2pNEk3LT0iTxkDUKiAr/WAOrxYer5ysX+xUb5O4R4hufKJDAY4dcdVSkBepac+VLAu5g/swwVs/r1qqS3lDTIET1Qz1sBQfrWyMNkBOWT4IodAEj4zFo+p5Ow4gXR3CQdJDbBUjFJAtG+mQygy5bWoCUKYgHA3z1zPCqT6ipIyZtTdsR9WknXd3U9ygCVw2x3D9ryHuHfgHCWbm8mF/LPkJwP7Q4sgpEERmCBO3OmDk1+l+lD5i3k27N9qkLj3FoFg9aBThx1azEO7x9I0903+Va2ZOsU7in+q63M3+sgeCyI8cZ6VnHWI7tTeFUOc+5nZdDmvJCOsn+UmwgLsPfNvQZImJ53bSVm8NWPo7VK5n+Xe9VH6sg65XVn3WgS6Vk7IhO3BesvIiOYH8y5D1uFM7pc74lf7FbV22fzU2JE1o3YPfHftQqDPT/+OUWbDUfSKWaWu4YJytNck=
+3.  This is the sort variable if `number_variable` is chosen. Use a placeholder from PlaceholderAPI and the highest
+    numbers will appear at the top.
 
-aqua:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMDk2NDYzMSwKICAicHJvZmlsZUlkIiA6ICJkZTE0MGFmM2NmMjM0ZmM0OTJiZTE3M2Y2NjA3MzViYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJTUlRlYW0iLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjA4NGI4YzllNzdhNThiZjkxYzkzZmQ4NjE0ZGE4Mzk2OGJjZWViZTNmZTVkNWYyMjkyMmFmNzYxNWQ2NTA3MyIKICAgIH0KICB9Cn0=
-  signature: vLW85Ab+Cz/S7RywqDhRfzRb+BX6sKHRbuy0se82DfOTH3sF7GMyJmk6tJaiffEfgIDoijnXCEYv6VecJuivsCp0CRwb05hrMXzhKadqnMjxj7g2Nz9sbTGsEWdgwTvYVWyFFTuNLLxNtJslWJ//XlmtK0ZRsWa6TdaFLnjabD/9z9XGH4XmqFwgdxzqhPlPaPtK/0Zz8o0mOfw8C+M1PaknaU8KsVqOj9JQQQNcZ2918IFI0phhC52Y2YPSqT85JS34Bq4tHbSGDA2D5oDVLUcn0J0I1wI4vFZA0sBVDbZEFLVIF6upapu4t7nzVqDEby6wsPiiCxiJ9wZyGNFAt44z85I0bHT0K64/y3vhk+X+xLchHPQlkRj4fZcOrQEHBK8KE2Ctxw6CS2xJbqZIKzahNZFi8eJsE1nHIOWCaUmp9gnGI8cYo2A/JUIwX0TgXiO28qi6S2jRqcTeLY8VI4DnTFxxrdQc1qhk07zOQVnG/5X50yF2IKXKI3NHoKMU0cDki91hGggCUr6alAC5ATfIJ1Rcf9s5oxgspGdKEzA+rhZsawZwHS0ABEkz84AK+7f81wLL9X0wjcx649FWsNq7ChJ0OzGWi4ryk7z81i0Vreeuv6fjTtq7wY6oR2WrriAYY5loU9pSl1rdRj8BL4TfjXuEUDMKu5x698l0woE=
+4.  This is a [dynamic text](#dynamic-text) element to display for each object in the list. Use placeholders to make
+    it unique for each object. Use the placeholder `{group_format}` to take the tab display from the player's group.
 
-dark_aqua:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTI1NzYxNiwKICAicHJvZmlsZUlkIiA6ICJlYjIwYWVkYTRiYTM0NzVmOTczZGNmZjkzNTE2OGZhYSIsCiAgInByb2ZpbGVOYW1lIiA6ICJTa3lGYWxsZWVlIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2NjNTAzYzA0MTI1OTJkYzc5MWQwNmY4NDljOTU0MDk0MGE1YTBkNDY1Mjk3MmM1NWZlZWE1YzNlMDEzOGYyOGIiCiAgICB9CiAgfQp9
-  signature: bUt8T8cMJE1FeVP26ukWPVKCBJzq6iWhJyvgkd2F9plwOFHUZmvola6kDMmovDJwmllRU5UIwHpUMEuJ7TJgw4QMqWvd7rzwW7QX/qjeUMQ5scdrys8sJ6yX0Qz1kBiIgK/QxPhodU499r/yrGOLj+eR/VGLTe33PRl266ZPGWE55mmv/DdnsiIzu6Tg2dEef1798X7Qowonv8OZvJY2rJ6OsAcCUEz21pyTPSXPbRboiihnSjWF5Sj0OGe0qF6iVWJppjKukSJWq2VUyKdis/ScL5PEpXRjezuT5OcM4mQBpKnQavqo3bugevXDM6IiVwodaez1JKsP0BBGse+9NZt2qcsfAYLp9tnks1b8gAroPcQVV0h8AI93uHcyfU8M/06Pnku1x35VTJyaGewEMzD0NaeTBd1AyOHKdd47aUU374viFobOVIRPaLCm5MjZ3j1oVIWP79ruWLhd5Y1EAYXEWTQxWJHyYsVnc+HOEMzNMMmQHVLpbxR9JH4dVyxF4drmflUOr5vWx6JOPB2mBTY9wi57aSGSBkZB05snwEWc4BU+Cy7RhEjee5JW5PDiW2l/JQ4O0BvLJ3iELNQ1dbYdgYsrEO4XUme7nPF3uuVQ6rPreJ8hFWFWBRLnKWX+GxeqP7x3oiMrF7jRcnLJkXoqPTR1EU4e4+venXS8JMI=
+## Tabs
+Tabs are the actual elements that are displayed to the user. For these you specify the columns to display for this tab along
+with the headers and footers of the tab. You can have multiple tabs that change out depending on what situation the player is in. They are defined with the following format.
 
-blue:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTIwMzU2OSwKICAicHJvZmlsZUlkIiA6ICJlNzkzYjJjYTdhMmY0MTI2YTA5ODA5MmQ3Yzk5NDE3YiIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGVfSG9zdGVyX01hbiIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9lOTMwMTU2MjFiMjg1YmZmMmJkYmQyZjNlMjYxNmIzZmIzY2NjY2MzMGRjMzYyYzQxNmRhOWM2NDhmODhmODU1IgogICAgfQogIH0KfQ==
-  signature: xpgYFEpkXaJJrL7QiWLvbuZb4pXI4wN6QEsF1wlT61rrPB8cUmqLW+VTcehC0S8nNfvp9Gyt9cYKJhRdFEgkjE2tF+OguprW2Qp6nfyksXyZ76MRr2SQy1qRBnnIZr2pGZYWZDIzRNzPxP0zDJF6iPG9nraFdMGi/KVR+t9c8a8n8be2BR1TAvyAVhYxKiCldEdJlHoLCSN4FucEaoZf/JwqAj9D9ywBg0OapsO20UZ1m3bD2FXV1cpJ8eZYfAyBc0zFWOlJSNB+c81a5tAZE6U3vt1lBQQvxjHA85cWlW1YM+mFql+iL2b5cS6wpZ/5Sqgt1C4oSicqvHjpaJcO+kl/c03UvvbpQzIXUZFuoH1ebHiLgQlaD6Bwj1RCA96hgKjsLo8LlD8GVAerRFo2kVCY3rAENdgTv8Em+m22YRSrvULkylzmVY9yTLsHIcGSzX/MuYj3nafmDR+QE3xwG04plvsHTxthVinDGYJ/BDl4bnbuZIeAl/tSaJ+H4/AmGTpGrQhaqyVMrqRqHPmR+vgQLPa0iuJPRBfO+o9YWwKC4J631Mj3E/Tf/gqqFIIQYkswfNrgM2tNBj0sFVTO3eoCSlBCRwyIJ4A6tbIwSaCL7CwjOgaVQYbACJypFt+IOGYcr/Um4MpS6AyuMvIvCMKRG/iU3CWotIjVgfuZ+A0=
+``` yaml title="tabs/default.yml"
+# ID of this tab for referencing it
+name: "default"
 
-dark_blue:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTMxNjg0OSwKICAicHJvZmlsZUlkIiA6ICI3NTE0NDQ4MTkxZTY0NTQ2OGM5NzM5YTZlMzk1N2JlYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGFua3NNb2phbmciLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTM4MmQ2YmU5YTczOGFkNWM0ODEyMWRjYTE0MzMwYmJiYjY4ZmE4ZTU1NjE5MTlkZWZmODQ3ZmE2ZGEzYTBiMyIKICAgIH0KICB9Cn0=
-  signature: YbpLw3qpTXHrIjKCDCCBvArrKhoYPFb6JvDzfuYBDmbrWWHHoA6rfP4H63H0Te9bSMOOl31aDfMOkyO7WN59//xYDcwV4ahpVY3/Zb03kprweDDt91TrVk0J9ZwCdrkliZZBwbGBmS7XgKsPQWxh+lkbskdJ9P3RNuo7ROwUpRGFQWCH0KX5uhikhkZHQBpbQiii5psR4KelVhPFDQffwuYqYiJMLh+rZ7XH6tiMC1FcuTmSNHSZFZShG8p19a49rCa8EIVa9W2zh4Kyw69KxquGcs7c5UsuATwWPNgWza9xhnjZJbQBHJR/awhXow4l2W77hzbADXLBTGmPb+wMMDRqcHFapL9LcemBp5EyM+g8DTcvAUzzZNT5J/4adrZ5t3JSn1no7pa41ykMWM788+BQpse90FDrrc4IXKF1cEnoFYdK5BP2lYkNY0dC8b0+TEtR8LxoQW9pP6+BpXNzPFHaqjxG4LJ+35+8/PM06Ln3ZYzTkzVTw1yrr5/xSCE7pBfwiQP21NeQSK6eftLLLMMcqjAAEtcQsRRpTmrou+519owZFty0eC62UKPUoVZyxjaQRkzUPTvlwuT/EWmL6tFNP0jH7sc6feDuv5ulxGHsbWD7QW0WHxn1AHsKRUXlQgnrtIXDrRpNotjr0m9PGt1mhuIfUklnHqkPoR1wDag=
+# Requirement needed to view this tab
+requirement: # (1)
+  type: permission
+  value: ""
 
-dark_purple:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTQ2NzY2NSwKICAicHJvZmlsZUlkIiA6ICIzM2ViZDMyYmIzMzk0YWQ5YWM2NzBjOTZjNTQ5YmE3ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJEYW5ub0JhbmFubm9YRCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hMjNiNjBiM2YxYjEwN2RiODQ4OWRkNGI3MjBiNTYwNjI2N2E3YzJiNjZhNWQwZGZmMjQwZDI1NjFkYjYwY2Q2IgogICAgfQogIH0KfQ==
-  signature: bLE+ZL+NKyqF30/lXJ6hoxigZUS0vPqFs+jcYiNtokbhPo2zb3ONel1pdT4C1Qm7ALCB9G+nnRU02ptriM2S6535d9fxBbwLaLzJ9C1CzbWmlDmgK+pb45fOBLUKHPNYCntU7GDYICtWUn+2Mz9cCsTf/lsyyke0Zy5tIACCV1C1kuOXsuo2+Y7mRmZoUlUdHqcYwSaA5eAl+5IT5k04lFxxIDj9zZPbh3rCH8mpdda+gkWQ5b2MJxPu+Cto1yrCbW5Q04JztcV7hKxU03X6T7dg4SiWC2lLNQc7BC7w69eLLK8gs92B3mIkSXaNHFJ9AAC7fLfBnzVKEeftshtNb1zSpjcdDAaq5QOFkbwD8ieQYQuH9dRsvJSmk+G8FpgT4qknm9XCoAWnhkGJuwZNMoLaaBkNOywcOHBdf4CbX1V/4TCi2sJvE+bE9B/XyMDi+e6N/7H1NFMfUlZVTTDeD2WK3n/AQaqcXNcWKGhf1L8ucuQYSshszRyXEWq+8Hyzc8naq7x31RKrMMMs7/uYTu4dq07lew6w1UXm1PJ3h7hh3cY6bxXhBoOvQYBnLmGBHqIdCIobmI57NzG2q2/VYFpkiKP68Hek7ZTHkJyuLHad4TDATckTVJOyJ2LNAGkEQIGLF84d4/lQAZIsNVoT7olcv/FCIYJanX+M8vJZQpo=
+# The weight of this tab. This controls the
+# priority this tab is displayed if the player
+# meets overlapping requirements.
+# Higher number means higher priority
+weight: 1 # (2)
 
-light_purple:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTcxNjE5NSwKICAicHJvZmlsZUlkIiA6ICI5MzZmMTA3MTEzOGM0YjMyYTg0OGY2NmE5Nzc2NDJhMiIsCiAgInByb2ZpbGVOYW1lIiA6ICIwMDAwMDAwMDAwMDAwMDB4IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzRmZjdiZTVlNWQ3Njc1NTU0OTAwMDhkM2Q4MmZhOTY2OTI2MTM4MjM3NjU4NjdiZWNmM2Q3MWM5MmMyYmRlYzkiCiAgICB9CiAgfQp9
-  signature: hv+FgR2X1gBEDUq1l/ug5akRBxBCWLwMhHscj4jSiNEvGwqhM1BC5LgFP9sdQjCPh4cPv6OP0LAciMa9+jZIcn7a53QVmpBigcgaDnYCXv98y3G6VGDOsGetGx5IL9f/tydnZyer9NWSZ8B9IA3My6WPPb6tBXGZC6IxVNwuOFl5sa1VpF/aFQKdbFVsoKJ8JYft8MKgUQ2GZ7LGALM/sB8gKrqfaN53A3xIkUTmMLOScz7OO5eIrCc/COL2mpTT3ntPyBvrn1dv8E//7uoh1VA3XLrierkhC78zwIeKkjilrjq+9C6bYiS4wI5uxbsb3y/uTVz711y6PPwAMIkO20C/60nVGbG7k7riM0Vl/N9jbo7MRh56jS1y825ETVjX6Q6rou7yV3PK2KhIZcNLf2/7FeJMDIKrBGIeDO5oO2otPunwepk7JUuApglLbTcKbohAnFXk6yieaUpnABQBg3JevKeLi88EU3Js3Rppm3uiIm3VZlrs2Fx5Ja7wu94r1UdQ+OPGGjuPHO3wAePDareoKvcNqabWvk8z2dQDUjhqJ8DBWNpKAmdTgukhUnTH8JLLOiFTvjI1/Xqr+phiGr3/I58GVumA1OOr6MloB6kcs0wl0+D3fFW/aAJowg98tzVP2O4cqljvK+AfM2U/W+CPhp9KtXBVE7rjM45OLLA=
+# Options for columns displayed in this tab
+columns:
+  # Whether to display titles at the top of each column.
+  # Adds the title then a blank spot then begins column text
+  display-titles: true # (3)
 
-white:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTc4MTE5OSwKICAicHJvZmlsZUlkIiA6ICJkMGI4MjE1OThmMTE0NzI1ODBmNmNiZTliOGUxYmU3MCIsCiAgInByb2ZpbGVOYW1lIiA6ICJqYmFydHl5IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzIwM2NiZTk5M2UwOGEwYjI1Y2M3ZDJmYTRjMDgxYzA4MjU5NTY2NTlhZTk2MGQ4YWEzNGZiMDBjYmQ0YjFmNmUiCiAgICB9CiAgfQp9
-  signature: fPwrye8zLShilxN39mMYIZThBYM2Ybbyj7ondpOPI2dTtc6YmS6r7984NmA4TmjgyrhH0QRVINMbFTAlNhl70wLayI8X6cjF57uZIEOOMyv4CuZ7Gde0IhCU9o6QdeAWwdw+jLo83q4IQQbqOr/8dFIDHxD3XHkkqu5dt1ULZ0V7XU5DnMxqZQcA2dydVMPq4wqEMtdnEyZDnKWaXXOlj46/Z5fQySaW0eMJOfgJGfDloeVnAGwi/8/tParrML9++vEwn+AWIvLPaZvbj5OmRMf8wL1V14j3aQ54fXSQXblhADiVoz/OnH25JvQ5LtZRWp6Zok6PB4QwMYCLd8rnwrJQEvNuWEwpwEk8AAghUFE1sPhFyLg9eqSPHPikVa4Mla+aR328xW5iS4QpZNA8LmzXLeT099PbZ6TFZCW7olrC7MX1vlP8VaF39wlfI0VYFQMmoHOTYAVbIzlp8K4JEM/1joEtUva9JZIFZvCT8R+NTxtP2p1YanH2YPliIPSH0uQtHqDax+k0AopxTO82YFQ6WieEsoA26bpxzEow+N7hz7759sEW7dg9rWr5xHvlo6OBNtkhON1a73Ht36a08mCTcJgAiVnMOixg65gCT5l3tuVfJ1C5TfIh7fYBnSySlMEhvKeBlc0WRrpfgAHMRLwG1Xn3Ixo4No8VwCPX4zA=
+  # The minimum width of each element in the tab.
+  # If there are no elements the columns will be at least this width.
+  # If elements are over this text length they will be trimmed
+  width: 30 # (4)
 
-gray:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTY0NzAwMCwKICAicHJvZmlsZUlkIiA6ICJmNWQwYjFhZTQxNmU0YTE5ODEyMTRmZGQzMWU3MzA1YiIsCiAgInByb2ZpbGVOYW1lIiA6ICJDYXRjaFRoZVdhdmUxMCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9mNTRmZDY0ZTYxMDU3Y2I1YjdkZmQxZmMxNmNhZDNlMjBiY2JhNDIwZmE0Njc2YzI3Y2QxNDQ1OWJiOGM0OWYyIgogICAgfQogIH0KfQ==
-  signature: lelbmM+EuI/luW1ku+5QVzwOXQeFlFBnXXANJwcZnLZRstNfqavMWW8xNw/uNBbcCmzE04GjIefkuW5sffb1n+k4FCuZUmNpKOYof/367G+QM8z01kOPbaBdAR/ISKMu2FxO175DbB4xFHXc+UaHo/NWuTAxDV64C1CcW+STllbXudgqqfsZ4dB+rbhe+yIxKh+BOnHVbpcIEirkcyxn36rJA+TICXBWQlrIJs572MApbA/pkKYpJEIgUHuWTlzrMsjQ7d9u1YeJT1RlikLZO+0u0HDZIach1J0oeVVBcjbBx5gfmM+dOteVJF+5F1MICzPIckQGP3bsOgaJNsAm0LkEcb6XwhvjH6SGVuTPfvOQbNHvuOD+TfFOp3vzEEMmUCo+y/4/cmefQSaduqLUjziYFSVbfqCzqIRWp24KCZ66S1IahlJ4vOKLmDPgUqsr6ElovJ64+dHOhXWvNXpjBepuMhbQaYr78eSiMHxWbXrNMtY0wiTNe0lworO3XzGSYB1uqyvaajo1LVzb2Y59HG1eGDNKghLj0VX4QDgzPf6nk1z9f31+W2Y60Ti0ieCRm9VSKfK4L7mePBvzXsuEGZwc5BMm7glqzSx00GEMSGfnLLCnWjjLsznKK8qEGlEqEgmjzCN/Yv299etFRHN3WfkULR1MPXAw0zyQG5U9mdk=
+  # The columns to display in this tab mapped to
+  # their slot. The tab will be as wide as there are many columns.
+  # MAXIMUM of 4 columns on one tab
+  list: # (5)
+    # The number is which slot to display the column in
+    # and the value is the name of the column
+    # These here would make the tab 4 columns wide
+    1: "online_list"
+    2: "player_info"
+    3: "server_info"
+    4: "features"
 
-dark_gray:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTM0MTY1MywKICAicHJvZmlsZUlkIiA6ICI5NGMzZGM3YTdiMmQ0NzQ1YmVlYjQzZDc2ZjRjNDVkYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJUaGVRdWFzb24iLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDIyMmYxOTEwYWRlYzM2NmU4MDNlMWI0MTVjZTAxY2U3MDZmNDZlZjIxNTRiN2E3N2UyYjllZDk3NjQzNGIzYSIKICAgIH0KICB9Cn0=
-  signature: OO3tIfgVySGiI2sRUcqNXBJjN3kOD6D/Kf/OOL2c8rNfmAvjhVNTr/a1K7zRl2aQ1EuSCXbJi0ETQdW0h/ZDRtkVW0c3XGfWP79o07G1kP1Xxf+/gjmizH5UxmLjLzZBw6O8xPqgDjzEqY1S1SIQl0x3c91fuwKcYf3soy9MaT4xJxT4cfhoeaxalLzovoqyF/p+Q37DzLnEqVHtCgJQ8R4JulO8FsW/o7/ZPqXzOGw5ducyU1nZGnmHsoTo6l7gokIcSo3YKT2FqmG6a3r47VtKbJCh6NDLIZ/osuqRvTY24Zabl4XuWXmuBEu1QundSAGj51lgrQsF3PJaf6eZPNyRxMG9WuzTiLpP3e/p79eyL9meNhB8P+64QQ5sO2hB+p2v1zIjWwu0LsolOUvPQ5EyvE/0OuxY6kvUfWDaEzGrcRV76pUhHPCrmm+wnu29nk0wYNcycbWELspwgT25J7XM/murWjRmhCT+aLA5DWEIpCx4x6wfMBqkmI+OwIfF7FGw+g502EeuxjwIpDx6jbQKjLPejFeQGrD+E6hdcwfuyDRJEkh9wzMhDNkyuck2jQLH0bxj/3jqUaLBD5kD23W1S/LF3GnRmbw46xC8CoFzu4BbheclHIbXK12otAqzXu8AjeiM19g5NRczx0mSUATzhhbEoyWZES+KuajXYs0=
+# The tab header. This is displayed at the top
+# of the tab above all columns
+header: # (6)
+  # Text to display in the header
+  text:
+    # These are the different text elements in
+    # the column. The key doesn't matter and items are put
+    # in the order they are entered
+    1:
+      # These are the different animation frames for
+      # this text. Each text element is iterated through
+      # to create a dynamic animation. Colors are supported here
+      # along with 1.16+ HEX codes. Hex codes can be used with
+      # '&#111111'. Here is a good tool for generating gradient
+      # text. https://rgb.birdflop.com/
+      animations:
+        - " "
+      # This is the interval (in ticks) between updating
+      # animation frames. This is limited by the tab update
+      # interval. Recommended being -1 if only
+      # has one frame as doesn't actually animate
+      interval: -1
+    2:
+      animations:
+        - "&b&lMinecraft Server"
+        - "&b&lM&9&li&b&lnecraft Server"
+        - "&b&lMi&9&ln&b&lecraft Server"
+        - "&b&lMin&9&le&b&lcraft Server"
+        - "&b&lMine&9&lc&b&lraft Server"
+        - "&b&lMinec&9&lr&b&laft Server"
+        - "&b&lMinecr&9&la&b&lft Server"
+        - "&b&lMinecra&9&lf&b&lt Server"
+        - "&b&lMinecraf&9&lt &b&lServer"
+        - "&b&lMinecraft &9&lS&b&lerver"
+        - "&b&lMinecraft S&9&le&b&lrver"
+        - "&b&lMinecraft Se&9&lr&b&lver"
+        - "&b&lMinecraft Ser&9&lv&b&ler"
+        - "&b&lMinecraft Serv&9&le&b&lr"
+        - "&b&lMinecraft Serve&9&lr"
+      interval: 5
+    3:
+      animations:
+        - '&7&o(( With a new tab experience ))'
+      interval: -1
+    4:
+      animations:
+        - " "
+      interval: -1
 
-black:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYxMjAyMTE1NTU1NywKICAicHJvZmlsZUlkIiA6ICJiNWRkZTVmODJlYjM0OTkzYmMwN2Q0MGFiNWY2ODYyMyIsCiAgInByb2ZpbGVOYW1lIiA6ICJsdXhlbWFuIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2FmY2ZkM2RhOGQ2NzVmZGU3N2ZlZDM0ZDRmNDU4ODM5OGEzYTZlMWIwNzBiNmU0YjQzMDgwNWM1NmQzMjY1MzQiCiAgICB9CiAgfQp9
-  signature: ASXmp1WCTTghE7uk5pPSrx6W5xkHJrWkGKxHOnwh3VPQ3un7kFTbEy6WxHIGT8LayjgSTRDN/IfSHc5K3ijSji0xRxwXkOs1gq+MEz9zR4/0meSf0ysh8rGx7IeLL6iLf1F2NJoEh/F+OROj959sx9I9L3HAVCCa6QPzcYwDcaqUMYzdNfRDAZk7bLthHLPGxpU8FJ3wNkZnwlMWL1tCTE/I8+Yz9iXk735pLJFZie+gKdSF+oi79YXKkT/zceYh5t7EkwHmRvEk2576LD7cvZFBrgBWCmLhioQLIgu5zmkyJn6YMsP1Xf4FSYuDj0KlPKWcp9O3ywaSu5L0TKgNAnQ/JzQgCC/+8Y8cJwHyEc08ZkENGyBgdUb83KLpoY2Lfj5//XJgwgVvaKHob4tna5I4LVcuIY32fiMj/tRaomr3YvhU1WDWogDDrNumqAJau0VO7vtdnNUQ0eDSz85d7a7OJQ69hCdV8NhQM6xTRj0W1CUF93F7Z+ziausCnz6+ihP4IPhAJ1kUydsTO/XUjMAJqTYublwYG+yr8enxx3Ir1YwnuIF/3aLf+9X1Wki5InzIockbwfE1POY7yXS2TJL29mDwUthTn0/Xl4V10Au/rtAI9h4hmsVtw8KdJpVU/j4N1QUuX96EVjQNZkh9bW9BZ/nVUdJI/bnoFs5frBM=
+# The tab footer. This is displayed at the bottom
+# of the tab below all columns
+footer: # (7)
+  # Text to display in the footer
+  text:
+    0:
+      animations:
+        - " "
+      interval: -1
+    2:
+      animations:
+        - '&c&lSTOREWIDE SALE 25% OFF'
+        - '&4&lSTOREWIDE SALE 25% OFF'
+      interval: 20
+    3:
+      animations:
+        - "&c/buy &for visit &cbuy.server.com"
+      interval: -1
+    99:
+      animations:
+        - " "
+      interval: -1
+```
 
-discord:
-  value: eyJ0aW1lc3RhbXAiOjE0ODU4MjY5MDcxMDQsInByb2ZpbGVJZCI6IjQzYTgzNzNkNjQyOTQ1MTBhOWFhYjMwZjViM2NlYmIzIiwicHJvZmlsZU5hbWUiOiJTa3VsbENsaWVudFNraW42Iiwic2lnbmF0dXJlUmVxdWlyZWQiOnRydWUsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kNmQ5ZjI1YTdhNGU2Yjc1Y2Y4ZWFhMWRhZWI0N2ZjOTQ4YzU3MTgyNDQxNTY3NTVjODVhNWU2OGI5OGMzZTUifX19
-  signature: v13zgC1XOdRm5icNeNrg19hcwmGnNFEIs3zKEJqPIJ9MACCFlk8lv9U6d32lPaAc1cPZLcbWpqWzVPyZRUT2qhQrG7+iq+T3Kl64mEaNCzRRVLMGZQj3sveHUd6UCXHQh2KUyoZ6T4zJj90y/0wJW8Mt8NZXxKawxdQEjgxPeqEM4bB3iwYqA5IPWPPvgtdhqy4ZOFITtAhx+0rZ6piwWwrRCs2G0WawfN0pdGaq/c4X5JxCDJftFTeo7+3rs41GXJilGnRE8xt1ANPieS2UNCp4ffu+/tt9yC6IkSQUSHs8NHXi/3bkRZ6LSQ4bQgupaiGrutiEhZO9JOBJGs53C045VrndQX3Hw9njCB4sb5cVkL1ZPYSpK6ou4quHvfaj9DKoG/A3JB9DMwlFGA4odFwu2iz+E/JQebd6OUtW/k++q7hwpt/dfOEm/OdEpsJy8qVTtiCNqEj145wyjnvyhuqi3sh5tr5GQfyx7fahhyjhtyPB+E3ME8AA0DcLNeDpA0CNoGF0DqSIwp52srGzATqgV8hK06QJIJCdsxzuMFSDiV1xtBdDSTrhBa88HCCKNmpxb4HqqiE6QY8SvqJyllKlYOTbfM1SdlcJ5Jk+76c80R1XOAjibeyYfhYsK2vJSysvoLOlHTbNLwHZpzmTDfHGIdl2oH+lokZP++JCGp8=
+1.  This is the [requirement](#requirement) for this tab to display to the player.
 
-twitter:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYyOTU5MDIwMzEzOCwKICAicHJvZmlsZUlkIiA6ICI0ZWQ4MjMzNzFhMmU0YmI3YTVlYWJmY2ZmZGE4NDk1NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJGaXJlYnlyZDg4IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UxZGMyZGVjOTBmMzc0ZDZlMDc1YWNmYTE4YzBhMmMwZDc5YWE5Mzk1NjdiZmNkY2ZlMTk2YWVlOGNmMzM0NTEiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==
-  signature: u+XgMFGg3/tTtD6O6wabu4cRiCY7Y0YwmGVb/6jmIYZAMUP7xySFKzxZVnORjsmNajxdYkngRcJI/jXVU/3RmTBOHLXzUaq/anoL9uaK5AtOER1vLfyynDSlyilRHccBDjpKrl+dx8noIO/Q5fdU9SHMKPy/uZWl73n/V8Kw+uh+JqPyYqArLCKNedrKiyqveh/x4MIJdJx+tRomROezDoOhUsYdM2IXsIEecVPKldeSqL1swZNzPllrOE44DN2+v8tvs/BWhrGxCagD/Pf9Csdjr+RHqj2CJP3fST67uhb6iMr8ItS0s5ki9MBWIUVqSaTSc+0yD9kSeuLs70eammJzEnOWts1P/559r9XgwG8hqbhO/dvj12SBoZOTLre2dbvBrQyzh/g/GK51UB8FQMUnN5T8usC56uXkhMHBfkBtrXLiwMUdomDNyRbB36eAxoNDKR83RjLUsIp9sqeArxidqAtqaFVFSfsXGa7Hjd+4XAaaItmsejhsjFXBbmta8BW6221UdsrLGkYglFlkL9xCsn6PS236/5YAu9paWsoHD1axMbMCHwqJvbkb3OimqiQ9sHXYZKsukStNv3ijsuuJWtp2mnahaRLF1EewDiS15RlUBm6+J507x6iSt8upqO8AXYwSBQ7BQWVLzF3UI5Weuf3Ptc8Fg9W1ikuAWDo=
+2.  This is the weight of this tab. If a player meets the requirements for multiple tabs, they 
+    will have the one with the highest weight. If the number is higher that tab
+    will be prioritised. E.g, A weight of 99 has higher priorty than a weight of 56.
 
-oak_wood:
-  value: ewogICJ0aW1lc3RhbXAiIDogMTYyMTE5MzEwNDI1OSwKICAicHJvZmlsZUlkIiA6ICJmMGIzYmRkMjEwNDg0Y2VlYjZhNTQyYmZiOGEyNTdiMiIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbm9uaW1ZVFQiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjE2NmY2NjRjNzdhODYxMTAwNmE3OTliNzA1MWNkZGFkYWRmNDVkZTMxNTkzMGIyNDYxYzcwZmU2OWE1OWU3YSIKICAgIH0KICB9Cn0=
-  signature: m5tePqQrEazP+rmYfYcBCQnEDumyONtj9sVvWHNvVBxSOfv2fYOK1FOcFUvw5Q4LVZsAL6iu8BFr28tRuMMpsk4UVNnTbRIeKNdluxBHgrwmZfJp/B8zntbZsToSftW3z2Drp0RpOGnSkYtuDEnNQJ7WSE6sbxJvUTq79ZOE7NDxhzJzmw2HZBoTr9s9tn/aVpsDT+x1U/wruCU5VPW7tnQpGQBb1q2Z4d9apl0vDjYS+9w7JTR62T1QnpLJtZ7QkyBPIGmYs0PI3aJXj7O/VDF38tv+v+XG/lZD3j9WBCqpcly69Q01JRAmku78J1hBiDLbMyYyMI+M2RC5k2vEpQ5iuCommqgppvSeDOcA6/PEkYqLSNOop+nLFTyQoL1amNh5bp3yEyzwE7HwkQ4LPzB2wRnhTL034yNgcn1YyCCAOBr1jxZhtvXOu5eezOqGEioeYYTTGwcVJ0nnSVgbkKOBpQUk9gDZWpBOa00zJz3dvkUMlYEw34rkhM6ZGfuqAZCDseIlmFPcU0+y8Wq5xOYfSPTO6rD7ZdFEiHisqM+w8P+Kd17trpJ/wll+lPprJTvKXeM9X6NTNu1d5JSdwjyPBAsL2SIqCU5D+PP0AExWsfCO9GotKstTK8vKYQJb4ftxj3giLnUhermnQI0WNdYLLNr4zXo5BGUOwNqFJFQ=
+3.  This is if each tab column will display a title at the top defined in their `title` property.
+
+4.  This is the maximum width for each element on the tab. Anything above will be trimmed.
+
+5.  This is a list of columns to display on the tab. Each is defined like so where the slot it is in
+    is mapped to the id, `slot:column_id`.
+
+6.  This is a list of [dynamic text](#dynamic-text) elements that display in the header of the tab.
+
+7.  This is a list of [dynamic text](#dynamic-text) elements that display in the footer of the tab.
+
+## Components
+Alot of configuration options take the format of certain components. This will explain
+the format for each component so you can refer to here when it mentions it uses that component.
+
+### Dynamic Text
+Dynamic text is a text element that animated. It contains several frames along with the interval
+between changing frames. The format is as follows.
+
+``` yaml
+# These are the different animation frames for
+# this text. Each text element is iterated through
+# to create a dynamic animation. Colors are supported here
+# along with 1.16+ HEX codes. Hex codes can be used with
+# '&#111111'. Here is a good tool for generating gradient
+# text. https://rgb.birdflop.com/
+animations: # (1)
+    - 'First Frame'
+    - 'Second Frame'
+# This is the interval (in ticks) between updating
+# animation frames. This is limited by the tab update
+# interval. Recommended being -1 if only
+# has one frame as doesn't actually animate
+interval: 20 # (2)
+```
+
+1.  This a list of string elements that are the frames.
+
+2.  This is the time in ticks before each frame will change to the next. This is recommended to be set at -1
+    if there is only 1 frame so the plugin doesn't bother updating it.
+
+??? example
+    ``` yaml
+    animations:
+    - '&#1d76fb▌ &#2578fbA&#2c7afbn&#347cfbi&#3c7ffcm&#4481fca&#4b83fct&#5385fce &#5b87fcy&#6389fco&#6a8bfcu&#728dfcr &#7a90fdt&#8292fde&#8994fdx&#9196fdt'
+    - '&#fb6a60▌ &#f46d6aA&#ed7075n&#e6737fi&#df768am&#d87994a&#d17c9ft&#ca7fa9e &#c281b4y&#bb84beo&#b487c9u&#ad8ad3r &#a68ddet&#9f90e8e&#9893f3x&#9196fdt'
+    interval: 20
+    ```
+
+    ![Showcase2](../../../assets/img/gif/Showcase2.gif)
+
+### Tab Item
+A tab item is an element that displays in each of the columns. It contains a Dynamic Text
+element along with options for custom skins and centered text. The format is as follows.
+
+``` yaml
+item:
+    ping: FIVE # (1)
+    center: false # (2)
+    skin: # (3)
+        name: <SKIN NAME>
+        value: <SKIN VALUE>
+        signature: <SKIN SIGNATURE>
+    requirement: # (4)
+        type: string equals
+        value: '%player_name%'
+        input: IlluzionzDev
+    animations: # (5)
+        - 'First Frame'
+        - 'Second Frame'
+    interval: 20
+```
+
+1.  This is the ping to display for this element. The options are `ONE, TWO, THREE, FOUR, FIVE` for the different ping bars in the tablist.
+
+2.  This is if the text should be a centered element in the tab.
+    ![Showcase3](../../../assets/img/Showcase3.png)
+
+3.  This is the custom skin for this element. The `name` parameter tries to find a [custom skin](#custom-skins) defined in `skins.yml`.
+    If you want to implement a specfic skin just for this element you can directly specify the `value` and `signature` here.
+
+4.  This is the [requirement](#requirement) for this tab element to display. If conditions aren't met it won't be displayed.
+
+5.  This is the [dynamic text](#dynamic-text) element of the tab item.
+
+??? example
+    ``` yaml
+    '4':
+        animations:
+            - '&e▌ Coins: &6%vault_eco_balance_commas%'
+        interval: -1
+    '5':
+        animations:
+            - '&e▌ Add more here...'
+            - '&e▌ Add more here&6&l.&e..'
+            - '&e▌ Add more here.&6&l.&e.'
+            - '&e▌ Add more here..&6&l.'
+        interval: 10
+    ```
+
+    ![Showcase4](../../../assets/img/gif/Showcase4.gif)
+
+### Requirement
+Some items in the tab will have requirements to display. These are custom checks that have
+alot of power to display tabs and elements in certain scenarios for a more dynamic tab. They
+are defined with the following format below and then each type will be expained.
+
+``` yaml
+requirement:
+    type: <REQUIREMENT TYPE> # (1)
+    value: <FIRST INPUT> # (2)
+    input: <SECOND INPUT> # (3)
+```
+
+1.  This is where you specify the type of requirement check.
+
+2.  This is the first input value. This is at least needed for every type.
+
+3.  This is the secondary input value. Only some types need it and it is for more
+    comparision checks like numbers or strings.
+
+#### Permission
+This checks if the player has the given permission.
+
+``` yaml
+requirement:
+    type: permission
+    value: <permission to check>
+```
+
+#### Region
+This checks if the player is in a given WorldGuard region.
+
+``` yaml
+requirement:
+    type: region
+    value: <region to check>
+```
+
+#### Experience
+This checks if the player has at least a certain amount of experience points.
+
+``` yaml
+requirement:
+    type: exp
+    value: <experience points>
+```
+
+#### Near
+This checks if the player is within range of certain coordinates.
+The format for `location` is `worldname,x,y,z`
+
+``` yaml
+requirement:
+    type: near
+    value: <location>
+    input: <distance>
+```
+
+#### String Equals
+This checks if a certain string is exactly equal to another. Pass in values through PlaceholderAPI.
+
+``` yaml
+requirement:
+    type: string equals
+    value: <input string>
+    input: <string to compare to>
+```
+
+#### String Equals Ignorecase
+This checks if a certain string is equal to another ignoring case. Pass in values through PlaceholderAPI.
+
+``` yaml
+requirement:
+    type: string equals ignorecase
+    value: <input string>
+    input: <string to compare to>
+```
+
+#### String Contains
+This checks if a certain string contains another string. Pass in values through PlaceholderAPI.
+
+``` yaml
+requirement:
+    type: string contains
+    value: <input string>
+    input: <string to see if contains>
+```
+
+#### Regex
+This checks if a regular expression matches the given text.
+
+``` yaml
+requirement:
+    type: regex
+    value: <the string to match with>
+    input: <the regex expression>
+```
+
+#### Comparison Operators
+This checks how certain numbers compare to each other. Avaiable operations are `==, >=, <=, !=, >, <`.
+Pass in values through PlaceholderAPI.
+
+``` yaml
+requirement:
+    type: ==, >=, <=, !=, >, <
+    value: <first number to check>
+    input: <second number to check>
 ```
