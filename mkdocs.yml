@@ -1,7 +1,7 @@
 site_name: 'Illuzionz Studios Documentation'
 site_description: The Official Illuzionz Studios Documentation
 site_author: Jamin Stratford
-copyright: Copyright &copy; 2021 Illuzionz Studios
+copyright: Copyright &copy; 2021-2022 Illuzionz Studios
  
 
 # Wiki Navigation
@@ -9,13 +9,15 @@ nav:
   - Home: index.md
   - Spigot Plugins:
     - spigot-plugins/index.md
-    # - Custom Fishing:
-    #   - Custom Fishing: spigot-plugins/custom-fishing/index.md
-    #   - Features: spigot-plugins/custom-fishing/features.md
-    #   - Installing: spigot-plugins/custom-fishing/installing.md
-    #   - Configuration: spigot-plugins/custom-fishing/configuration.md
-    #   - Command & Permissions: spigot-plugins/custom-fishing/commands-and-permissions.md
-    #   - Developers: spigot-plugins/custom-fishing/developers.md
+    - Custom Fishing:
+      - Custom Fishing: spigot-plugins/custom-fishing/index.md
+      - Features: spigot-plugins/custom-fishing/features.md
+      - Installing: spigot-plugins/custom-fishing/installing.md
+      - Configuration: spigot-plugins/custom-fishing/configuration.md
+      - Default Files: spigot-plugins/custom-fishing/default-files.md
+      - Command & Permissions: spigot-plugins/custom-fishing/commands-and-permissions.md
+      - FAQ: spigot-plugins/custom-fishing/faq.md
+      - Developers: spigot-plugins/custom-fishing/developers.md
     - Custom Tab:
       - Custom Tab: spigot-plugins/custom-tab/index.md
       - Features: spigot-plugins/custom-tab/features.md
