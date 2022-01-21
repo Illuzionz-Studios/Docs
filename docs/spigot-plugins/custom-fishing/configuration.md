@@ -270,6 +270,17 @@ requirements:
         input: <SECOND INPUT>
 ```
 
+You can also have an inverted requirement type which means it checks if the condition is NOT TRUE, if so the
+requirement passes. This can be done by adding 'not ' infront of the requirement type like so. Make sure there
+is a space between `not` and the requirement type.
+
+``` yaml
+requirement:
+    type: not <REQUIREMENT TYPE>
+    value: <FIRST INPUT>
+    input: <SECOND INPUT>
+```
+
 #### Permission
 This checks if the player has the given permission.
 

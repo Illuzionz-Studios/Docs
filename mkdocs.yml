@@ -65,7 +65,6 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Dark Mode
     - scheme: slate
-
       toggle:
         icon: material/toggle-switch
         name: Light Mode
