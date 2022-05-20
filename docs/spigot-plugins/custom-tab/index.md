@@ -17,11 +17,13 @@ Take your time to read through this wiki to understand how the plugin works and 
 Take a deeper look at the plugins features [here](features)
 
 ## Downloads
-:octicons-tag-24: 2.1.0
+:octicons-tag-24: 2.1.1
 
 [Purchase on Spigot](https://www.spigotmc.org/resources/78200/){ .md-button }
 
 [Purchase on McMarket](https://www.mc-market.org/resources/21525/){ .md-button }
+
+[Purchase on Songoda](https://songoda.com/marketplace/product/776){ .md-button }
 
 ## Metrics
 ![Graph](https://bstats.org/signatures/bukkit/CustomTab.svg)
