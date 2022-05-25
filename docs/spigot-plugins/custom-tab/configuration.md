@@ -134,12 +134,6 @@ page:
   # This is the text element that is displayed at the bottom that indicated the
   # current and maximum pages.
   text: # (5)
-    # The custom skin for this tab element. There are multiple ways they're
-    # defined. You can set the 'name' element here which will take
-    # a skin from the skins.yml file. Otherwise you can directly specify the
-    # 'value' and 'signature' like in skins.yml but right here under 'skin:'
-    skin:
-      name: oak_wood
     # These are the different animation frames for
     # this text. Each text element is iterated through
     # to create a dynamic animation.
@@ -229,8 +223,6 @@ text: # (7)
         elements: 20
         interval: 100
         text:
-            skin:
-                name: oak_wood
             animations:
             - "&7{current_page}&8/&7{max_page}"
             interval: -1
@@ -348,6 +340,11 @@ Tab Lists are another type of Tab Column excpet instead of speicfy elements it's
 each element is represented. It has the same pagniation features for multiple pages and the ability to specify a title to
 display at the top. They are defined the same as tab columns except with some extra options and the text is done differently.
 
+Online Player Tab Lists can have a [requirement](#requirement) option which will filter players in that list.
+
+You can set an Online Player Tab List for multiple columns and the players will span across those columns. Make sure
+to set the `page.enabled` option for the list to `false` to avoid it trying to change page.
+
 ``` yaml title="lists/list.yml"
 # Id of this column for referencing it
 name: "online_list"
@@ -358,6 +355,8 @@ page:
   # the below 'elements' option, it will create a new
   # page and display the remaining elements on all the
   # new pages
+  # If using an online_list across multiple columns, this option
+  # should be set to false so it doesn't try to change pages
   enabled: true
   # Maximum amount of pages to create. If
   # items try to create more than this amount of
@@ -429,6 +428,12 @@ sorter: weight # (2)
 # to sort by number. Can use placeholders
 # so the value of the placeholder is used
 sort-variable: "" # (3)
+
+# Will only allow players with tab.online permission
+# to show in list
+requirement:
+    type: permission
+    value: tab.online
 
 # Text for each element in the list
 text: # (4)
