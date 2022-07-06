@@ -172,7 +172,6 @@ items:
     unbreakable: false # (9)
     hide-flags: false # (10)
     damage: 0 # (11)
-    data: 0 # (12)
 ```
 
 1.  This is the chance that if this reward is found this particular item will be given. These chances are       independent of other items so if two items have a chance of 75, a calculation of 75 out of 100 will be calculated for each item.
@@ -196,8 +195,6 @@ items:
 10. This indicates that flags such as enchants and unbreakable flags will not be displayed on the item.
 
 11. Damage to the item (for durability). Remaining durability is (durability of item - damage).
-
-12. Data of item used for legacy materials. For instance on 1.8, for RAW_SALMON you would put, RAW_FISH with a data value of 1.
 
 ### Broadcasts
 A set of broadcasts to send to every online member. If this list is empty or set to null it won't send any messages. This means you can remove this option from the config and no broadcasts will be loaded.
