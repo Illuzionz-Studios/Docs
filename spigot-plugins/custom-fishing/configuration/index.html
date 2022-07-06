@@ -1,0 +1,1249 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Official Illuzionz Studios Documentation">
+      
+      
+        <meta name="author" content="Jamin Stratford">
+      
+      
+      <link rel="icon" href="../../../assets/img/logo.svg">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Configuration - Illuzionz Studios Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Illuzionz Studios Documentation" class="md-header__button md-logo" aria-label="Illuzionz Studios Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/img/logo-full.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Illuzionz Studios Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Dark Mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Light Mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Light Mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Spigot Plugins
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Illuzionz Studios Documentation" class="md-nav__button md-logo" aria-label="Illuzionz Studios Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/img/logo-full.svg" alt="logo">
+
+    </a>
+    Illuzionz Studios Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Spigot Plugins</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Spigot Plugins" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Spigot Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Custom Fishing</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Custom Fishing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Custom Fishing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing/" class="md-nav__link">
+        Installing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Configuration
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#main-config" class="md-nav__link">
+    Main Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reward-config" class="md-nav__link">
+    Reward Config
+  </a>
+  
+    <nav class="md-nav" aria-label="Reward Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#placeholders" class="md-nav__link">
+    Placeholders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    Name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#items" class="md-nav__link">
+    Items
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broadcasts" class="md-nav__link">
+    Broadcasts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#titles" class="md-nav__link">
+    Titles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight" class="md-nav__link">
+    Weight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vanilla-rewards" class="md-nav__link">
+    Vanilla Rewards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experience-amount" class="md-nav__link">
+    Experience Amount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sound" class="md-nav__link">
+    Sound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission" class="md-nav__link">
+    Permission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#region" class="md-nav__link">
+    Region
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experience" class="md-nav__link">
+    Experience
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#near" class="md-nav__link">
+    Near
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#near_1" class="md-nav__link">
+    Near
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-equals" class="md-nav__link">
+    String Equals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-equals-ignorecase" class="md-nav__link">
+    String Equals Ignorecase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-contains" class="md-nav__link">
+    String Contains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex" class="md-nav__link">
+    Regex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-operators" class="md-nav__link">
+    Comparison Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../default-files/" class="md-nav__link">
+        Default Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands-and-permissions/" class="md-nav__link">
+        Command & Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/" class="md-nav__link">
+        Developers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../custom-tab/">Custom Tab</a>
+          
+            <label for="__nav_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Custom Tab" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Custom Tab
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-tab/features/" class="md-nav__link">
+        Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-tab/installing/" class="md-nav__link">
+        Installing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-tab/configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-tab/default-files/" class="md-nav__link">
+        Default Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-tab/commands-and-permissions/" class="md-nav__link">
+        Command & Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-tab/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-tab/developers/" class="md-nav__link">
+        Developers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="configuration">Configuration</h1>
+<p>This page has extensive information on how to configure the different aspects of the plugin. All default files
+in the plugin come with thorough comments to help get you started configuring. This page will break down
+the sections of the config for more in-depth of what they do and help. Some text may have annotations
+you can click on for more info, others may have comments that you can also read. To just view default files view <a href="../default-files">here</a>.</p>
+<h2 id="main-config">Main Config</h2>
+<p>The first file to look over is the main file <code>config.yml</code>. This just contains basic options
+that apply throughout the plugin.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">config.yml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">settings</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The language file to use for the plugin</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># More language files (if available) can be found in the plugins locale folder.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en_US</span><span class="w"></span>
+
+<span class="nt">fishing</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The chance of finding a custom reward while fishing</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># can be a decimal number.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">reward-chance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100.0</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Amount of experience to give the player when they HAVEN&#39;T found a custom reward.</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># &quot;x to y&quot; indicates a range between two numbers.</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># -1 indicates to not reward exp.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">exp-reward</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1 to 6</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The minimum amount of ticks to wait for a bite. This is before processing lure and other things</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># REQUIRES 1.16+</span><span class="w"></span>
+<span class="w">    </span><span class="nt">min-wait-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The maximum amount of ticks to wait for a bite. This is before processing lure and other things</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># REQUIRES 1.16+</span><span class="w"></span>
+<span class="w">    </span><span class="nt">max-wait-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">600</span><span class="w"> </span><span class="c1"># (4)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>
+<p>This represents the chance out of 100 of getting a custom reward. This means if this is
+    set to 100, then every catch will be a custom fishing reward.</p>
+</li>
+<li>
+<p>This is the amount of experience points to give when NOT FINDING A CUSTOM REWARD.</p>
+</li>
+</ol>
+<h2 id="reward-config">Reward Config</h2>
+<p>Each custom reward is defined in it's own unique file in the <code>/rewards</code> directory. This section will
+go over each section in the reward config.</p>
+<details class="abstract">
+<summary>demo_reward.yml</summary>
+<div class="highlight"><pre><span></span><code><span class="c1">###################################################################</span><span class="w"></span>
+<span class="c1"># A custom reward that can be caught by fishing.                  #</span><span class="w"></span>
+<span class="c1"># This files defines all the options for a specific reward        #</span><span class="w"></span>
+<span class="c1"># identified by &#39;Name&#39;. Change the options here as you like       #</span><span class="w"></span>
+<span class="c1"># to make your own reward. To add more than one catchable reward, #</span><span class="w"></span>
+<span class="c1"># copy this file and then change the options to your liking.      #</span><span class="w"></span>
+<span class="c1">#                                                                 #</span><span class="w"></span>
+<span class="c1"># Any queries join our discord at https://discord.gg/DbJXzWq      #</span><span class="w"></span>
+<span class="c1">###################################################################</span><span class="w"></span>
+
+<span class="c1"># Placeholders</span><span class="w"></span>
+<span class="c1"># {player} : The player&#39;s name</span><span class="w"></span>
+
+<span class="c1"># The name or identifier of the reward. Make it something</span><span class="w"></span>
+<span class="c1"># relating to what the reward is.</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Demo</span><span class="nv"> </span><span class="s">Reward&quot;</span><span class="w"></span>
+
+<span class="c1"># A list of commands to run when this reward is caught.</span><span class="w"></span>
+<span class="nt">commands</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;msg</span><span class="nv"> </span><span class="s">{player}</span><span class="nv"> </span><span class="s">demo&quot;</span><span class="w"></span>
+
+<span class="c1"># List of custom item rewards, leave the list blank</span><span class="w"></span>
+<span class="c1"># if you don&#39;t want any custom items or remove this section</span><span class="w"></span>
+<span class="nt">items</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The section for an item</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sword</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># Chance out of 100 of getting this reward</span><span class="w"></span>
+<span class="w">        </span><span class="nt">chance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># The custom display name of the item.</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># If an empty string has no custom name</span><span class="w"></span>
+<span class="w">        </span><span class="nt">item-name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&amp;a&amp;lMy</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">Sword&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># The lore of the item. Set to null for no lore</span><span class="w"></span>
+<span class="w">        </span><span class="nt">lore</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;7Made</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">CustomFishing!&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># The amount of this item</span><span class="w"></span>
+<span class="w">        </span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># The material of the item</span><span class="w"></span>
+<span class="w">        </span><span class="nt">material</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DIAMOND_SWORD</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># If has custom model data</span><span class="w"></span>
+<span class="w">        </span><span class="nt">model-data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># A list of enchants as &quot;ENCHANT:LEVEL&quot;. Set to null for no enchants</span><span class="w"></span>
+<span class="w">        </span><span class="nt">enchants</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SHARPNESS:5&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># If the item appears as glowing like it&#39;s enchanted</span><span class="w"></span>
+<span class="w">        </span><span class="nt">glowing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># If the item is unbreakable</span><span class="w"></span>
+<span class="w">        </span><span class="nt">unbreakable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># If to hide flags like unbreakable and enchants</span><span class="w"></span>
+<span class="w">        </span><span class="nt">hide-flags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+
+<span class="c1"># A list of messages to send the player when this reward is caught.</span><span class="w"></span>
+<span class="nt">messages</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;7&amp;l(!)</span><span class="nv"> </span><span class="s">&amp;aYou</span><span class="nv"> </span><span class="s">found</span><span class="nv"> </span><span class="s">an</span><span class="nv"> </span><span class="s">awesome</span><span class="nv"> </span><span class="s">sword!&#39;</span><span class="w"></span>
+
+<span class="c1"># A list of messages to broadcast to the server when this reward is caught.</span><span class="w"></span>
+<span class="nt">broadcasts</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4&amp;l(!)</span><span class="nv"> </span><span class="s">&amp;c{player}</span><span class="nv"> </span><span class="s">&amp;7found</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">&amp;c&amp;lLEGENDARY</span><span class="nv"> </span><span class="s">&amp;7reward!&#39;</span><span class="w"></span>
+
+<span class="c1"># Title to send to the player. Leave blank if none.</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&amp;a&amp;lYou</span><span class="nv"> </span><span class="s">found</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">reward&quot;</span><span class="w"></span>
+
+<span class="c1"># Subtitle to send to the player. Leave blank if none.</span><span class="w"></span>
+<span class="nt">sub-title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&amp;7&amp;oFound:</span><span class="nv"> </span><span class="s">Sword&quot;</span><span class="w"></span>
+
+<span class="c1"># The weight (chance) of this reward being found. The higher the weight</span><span class="w"></span>
+<span class="c1"># the more likely it is to be caught.</span><span class="w"></span>
+<span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.5</span><span class="w"></span>
+
+<span class="c1"># If the player should still receive default minecraft rewards.</span><span class="w"></span>
+<span class="c1"># This means fish, enchanted books, enchanted items etc.</span><span class="w"></span>
+<span class="c1"># If set to false only the custom reward will be given</span><span class="w"></span>
+<span class="nt">vanilla-rewards</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+
+<span class="c1"># The amount of experience to give the player</span><span class="w"></span>
+<span class="c1"># as a range, the &quot;x to y&quot; meaning from x to y (inclusive)</span><span class="w"></span>
+<span class="c1"># Can just be a singular number</span><span class="w"></span>
+<span class="nt">exp-amount</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">6&quot;</span><span class="w"></span>
+
+<span class="c1"># The sound to play when this reward is caught. Leave blank</span><span class="w"></span>
+<span class="c1"># for no sound</span><span class="w"></span>
+<span class="nt">sound</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENTITY_FIREWORK_ROCKET_TWINKLE</span><span class="w"></span>
+
+<span class="c1"># Requirements if the player can find this reward</span><span class="w"></span>
+<span class="nt">requirements</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Check if the player has a certain permission</span><span class="w"></span>
+<span class="w">    </span><span class="nt">permission</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">permission</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;customfishing.vip&quot;</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h4 id="placeholders">Placeholders</h4>
+<p>The placeholders, formatted as <code>{placeholder}</code>, can be used anywhere in the config and will be replaced with the appropriate value.</p>
+<div class="highlight"><pre><span></span><code>{player}: The player&#39;s name
+</code></pre></div>
+<h3 id="name">Name</h3>
+<p>This is simply the name of this reward. It is used as an identifier to tell rewards apart, isn't used in the actual physical or virtual reward. </p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Demo</span><span class="nv"> </span><span class="s">Reward&quot;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="commands">Commands</h3>
+<p>A list of commands that will be executed by the CONSOLE when the player finds this reward. For example, you can use the placeholder <code>{player}</code> to use the player's name. If this list is empty or set to null it won't execute any commands. This means you can remove this option from the config and no commands will be loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">commands</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;msg</span><span class="nv"> </span><span class="s">{player}</span><span class="nv"> </span><span class="s">demo&quot;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="items">Items</h3>
+<p>A list of custom items are defined each by the options under a key. For example, here the options are set under "sword:", you can add as many you like under the "items:" key.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">items</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sword</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">chance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">item-name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&amp;a&amp;lMy</span><span class="nv"> </span><span class="s">Custom</span><span class="nv"> </span><span class="s">Sword&quot;</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">lore</span><span class="p">:</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;7Made</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">CustomFishing!&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># (4)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">material</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DIAMOND_SWORD</span><span class="w"> </span><span class="c1"># (5)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">model-data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># (6)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enchants</span><span class="p">:</span><span class="w"> </span><span class="c1"># (7)</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;SHARPNESS:5&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">glowing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># (8)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">unbreakable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># (9)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hide-flags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># (10)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">damage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"> </span><span class="c1"># (11)</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>This is the chance that if this reward is found this particular item will be given. These chances are       independent of other items so if two items have a chance of 75, a calculation of 75 out of 100 will be calculated for each item.</p>
+</li>
+<li>
+<p>This is the custom display name of the item. If set to a blank string or set to null then no custom name will be used.</p>
+</li>
+<li>
+<p>This is the custom lore for the item. If the list is empty or set to null then no custom lore will be used.</p>
+</li>
+<li>
+<p>This is the amount of this item to give to the player.</p>
+</li>
+<li>
+<p>The material enum to use for the item. Can be found <a href="https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html">here</a></p>
+</li>
+<li>
+<p>If this item should have custom model data for texture packs then set that here. If set to null then this won't be set.</p>
+</li>
+<li>
+<p>These are the enchants to apply to the item. They are defined as ENCHANT_ENUM:LEVEL, if the enchant defined is invalid then that enchant won't be applied. If the list is empty or set to null then no enchants will be used. All the available enchant enums can be found <a href="https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html">here</a></p>
+</li>
+<li>
+<p>A simple option to make the item have the enchanted glowing effect but any actual enchantments. Will automatically make the <code>hide-flags</code> option true.</p>
+</li>
+<li>
+<p>If this item cannot be broken and does not use up durability.</p>
+</li>
+<li>
+<p>This indicates that flags such as enchants and unbreakable flags will not be displayed on the item.</p>
+</li>
+<li>
+<p>Damage to the item (for durability). Remaining durability is (durability of item - damage).</p>
+</li>
+</ol>
+<h3 id="broadcasts">Broadcasts</h3>
+<p>A set of broadcasts to send to every online member. If this list is empty or set to null it won't send any messages. This means you can remove this option from the config and no broadcasts will be loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">broadcasts</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4&amp;l(!)</span><span class="nv"> </span><span class="s">&amp;c{player}</span><span class="nv"> </span><span class="s">&amp;7found</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">&amp;c&amp;lLEGENDARY</span><span class="nv"> </span><span class="s">&amp;7reward!&#39;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="titles">Titles</h3>
+<p>Titles to send to the player when they find this reward. <code>title</code> must be set in order for the <code>sub-title</code> to also work. If either is an empty string or null its message will be treated as unset.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&amp;a&amp;lYou</span><span class="nv"> </span><span class="s">found</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">reward&quot;</span><span class="w"></span>
+<span class="nt">sub-title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&amp;7&amp;oFound:</span><span class="nv"> </span><span class="s">Sword&quot;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="weight">Weight</h3>
+<p>This is the weight (chance) that this item has to be found out of all rewards that meet the player's requirements. How this works is it adds all the chances from rewards that can be found. For instance, if there are 3 rewards with a weight of 10, 2 with a weight of 3, and 1 with a weight of 0.5, the total is 36.5. So for the reward with weight 3, it has a 3/36.5 chance of being picked.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.5</span><span class="w"></span>
+</code></pre></div>
+<h3 id="vanilla-rewards">Vanilla Rewards</h3>
+<p>This is if the default vanilla fishing loot table will also reward something when this reward is found. For example, if this is set to 'true', if you find a reward it will also give you a fish item or enchantment book etc. If it is set to 'false', then only a custom reward will be given and no default fishing rewards from vanilla.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">vanilla-rewards</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+<h3 id="experience-amount">Experience Amount</h3>
+<p>This is the number of experience points to award the player when they find this reward. The default vanilla is from 1 to 6. The format for this is as a range, from one number to another. This is formatted as <code>{number} to {number}</code>. It can also be a singular number in which case that amount of experience will be rewarded every time. If this is set to null then no experience will be rewarded.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">exp-amount</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">6&quot;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="sound">Sound</h3>
+<p>This is the sound that is played for the player when they find this reward. These can be found <a href="https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html">here</a>. If this is set to null then no sound will be played.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">sound</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENTITY_FIREWORK_ROCKET_TWINKLE</span><span class="w"></span>
+</code></pre></div>
+<h3 id="requirements">Requirements</h3>
+<p>Fishing rewards can have certain requirements to set where they can be found. You can use
+<a href="https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders">PlaceholderAPI placholders</a> for the player catching the reward here. They
+are defined with the following format below and then each type will be expained. </p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;REQUIREMENT TYPE&gt;</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;FIRST INPUT&gt;</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SECOND INPUT&gt;</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>This is where you specify the type of requirement check.</p>
+</li>
+<li>
+<p>This is the first input value. This is at least needed for every type.</p>
+</li>
+<li>
+<p>This is the secondary input value. Only some types need it and it is for more
+    comparision checks like numbers or strings.</p>
+</li>
+</ol>
+<p>For a reward you can have multiple requirements by denoting each with an identifier like so.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirements</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">requirement1</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;REQUIREMENT TYPE&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;FIRST INPUT&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SECOND INPUT&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">requirement2</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;REQUIREMENT TYPE&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;FIRST INPUT&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SECOND INPUT&gt;</span><span class="w"></span>
+</code></pre></div>
+<p>You can also have an inverted requirement type which means it checks if the condition is NOT TRUE, if so the
+requirement passes. This can be done by adding 'not ' infront of the requirement type like so. Make sure there
+is a space between <code>not</code> and the requirement type.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">not &lt;REQUIREMENT TYPE&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;FIRST INPUT&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SECOND INPUT&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="permission">Permission</h4>
+<p>This checks if the player has the given permission.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">permission</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;permission to check&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="region">Region</h4>
+<p>This checks if the player is in a given WorldGuard region.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">region</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;region to check&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="experience">Experience</h4>
+<p>This checks if the player has at least a certain amount of experience points.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exp</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;experience points&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="near">Near</h4>
+<p>This checks if the player is within range of certain coordinates.
+The format for <code>location</code> is <code>worldname,x,y,z</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">near</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;location&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;distance&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="near_1">Near</h4>
+<p>This checks if the player is in a certain world.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">world</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;world_name&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="string-equals">String Equals</h4>
+<p>This checks if a certain string is exactly equal to another. Pass in values through PlaceholderAPI.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string equals</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;input string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string to compare to&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="string-equals-ignorecase">String Equals Ignorecase</h4>
+<p>This checks if a certain string is equal to another ignoring case. Pass in values through PlaceholderAPI.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string equals ignorecase</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;input string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string to compare to&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="string-contains">String Contains</h4>
+<p>This checks if a certain string contains another string. Pass in values through PlaceholderAPI.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string contains</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;input string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string to see if contains&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="regex">Regex</h4>
+<p>This checks if a regular expression matches the given text.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regex</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;the string to match with&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;the regex expression&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="comparison-operators">Comparison Operators</h4>
+<p>This checks how certain numbers compare to each other. Avaiable operations are <code>==, &gt;=, &lt;=, !=, &gt;, &lt;</code>.
+Pass in values through PlaceholderAPI.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">==, &gt;=, &lt;=, !=, &gt;, &lt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;first number to check&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;second number to check&gt;</span><span class="w"></span>
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021-2022 Illuzionz Studios
+          </div>
+        
+        
+        
+      </div>
+      <div class="md-social">
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "pymdownx.highlight", "pymdownx.inlinehilite", "pymdownx.superfences", "pymdownx.snippets", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

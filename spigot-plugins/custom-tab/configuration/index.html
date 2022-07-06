@@ -1,0 +1,1667 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Official Illuzionz Studios Documentation">
+      
+      
+        <meta name="author" content="Jamin Stratford">
+      
+      
+      <link rel="icon" href="../../../assets/img/logo.svg">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Configuration - Illuzionz Studios Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Illuzionz Studios Documentation" class="md-header__button md-logo" aria-label="Illuzionz Studios Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/img/logo-full.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Illuzionz Studios Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Dark Mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Dark Mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Light Mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Light Mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Spigot Plugins
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Illuzionz Studios Documentation" class="md-nav__button md-logo" aria-label="Illuzionz Studios Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/img/logo-full.svg" alt="logo">
+
+    </a>
+    Illuzionz Studios Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Spigot Plugins</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Spigot Plugins" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Spigot Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../custom-fishing/">Custom Fishing</a>
+          
+            <label for="__nav_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Custom Fishing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Custom Fishing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-fishing/features/" class="md-nav__link">
+        Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-fishing/installing/" class="md-nav__link">
+        Installing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-fishing/configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-fishing/default-files/" class="md-nav__link">
+        Default Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-fishing/commands-and-permissions/" class="md-nav__link">
+        Command & Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-fishing/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom-fishing/developers/" class="md-nav__link">
+        Developers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Custom Tab</a>
+          
+            <label for="__nav_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Custom Tab" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Custom Tab
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        Features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing/" class="md-nav__link">
+        Installing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Configuration
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#main-config" class="md-nav__link">
+    Main Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-skins" class="md-nav__link">
+    Custom Skins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#player-groups" class="md-nav__link">
+    Player Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab-columns" class="md-nav__link">
+    Tab Columns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab-lists" class="md-nav__link">
+    Tab Lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs" class="md-nav__link">
+    Tabs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-text" class="md-nav__link">
+    Dynamic Text
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tab-item" class="md-nav__link">
+    Tab Item
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirement" class="md-nav__link">
+    Requirement
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission" class="md-nav__link">
+    Permission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#region" class="md-nav__link">
+    Region
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experience" class="md-nav__link">
+    Experience
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#near" class="md-nav__link">
+    Near
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-equals" class="md-nav__link">
+    String Equals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-equals-ignorecase" class="md-nav__link">
+    String Equals Ignorecase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-contains" class="md-nav__link">
+    String Contains
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regex" class="md-nav__link">
+    Regex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-operators" class="md-nav__link">
+    Comparison Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../default-files/" class="md-nav__link">
+        Default Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands-and-permissions/" class="md-nav__link">
+        Command & Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developers/" class="md-nav__link">
+        Developers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="configuration">Configuration</h1>
+<p>This page has extensive information on how to configure the different aspects of the plugin. All default files
+in the plugin come with thorough comments to help get you started configuring. This page will break down
+the sections of the config for more in-depth of what they do and help. Some text may have annotations
+you can click on for more info, others may have comments that you can also read. To just view default files view <a href="../default-files">here</a>.</p>
+<h2 id="main-config">Main Config</h2>
+<p>The first file to look over is the main file <code>config.yml</code>. This just contains basic options
+that apply throughout the plugin.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">config.yml</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">settings</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The language file to use for the plugin</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># More language files (if available) can be found in the plugins locale folder.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en_US</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+
+<span class="nt">tab</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The default tab to show players if</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># they don&#39;t meet any requirements</span><span class="w"></span>
+<span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>
+<p>This is the locale file to use for the plugin. It can be found
+    in <code>locales</code>.</p>
+</li>
+<li>
+<p>This is the default tab to display (taken from /tabs) when a player
+    doesn't meet any of the requirements for any tab.</p>
+</li>
+</ol>
+<h2 id="custom-skins">Custom Skins</h2>
+<p>This plugin has the ability to display custom skins in tab elements. They are
+defined by a value and a signature. Custom skins can be defined in the <a href="../default-files"><code>skins.yml</code></a> file
+by name where you can reference them later in other configs. Custom skins can be found/created
+at <a href="https://mineskin.org/">this</a> website. They are defined in the config like so.</p>
+<div class="highlight"><span class="filename">skins.yml</span><pre><span></span><code><span class="nt">skinname</span><span class="p">:</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;VALUE OF SKIN&gt;</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SIGNATURE OF SKIN&gt;</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>The identifier of this skin. This is the name to be used when referencing it
+    from other configs.</p>
+</li>
+<li>
+<p>The value of this skin. Copied from the skin value section from <a href="https://mineskin.org/">https://mineskin.org/</a>.</p>
+</li>
+<li>
+<p>The signature of this skin. Copied from the skin signature section from <a href="https://mineskin.org/">https://mineskin.org/</a>.</p>
+</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="nt">discord</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eyJ0aW1lc3RhbXAiOjE0ODU4MjY5MDcxMDQsInByb2ZpbGVJZCI6IjQzYTgzNzNkNjQyOTQ1MTBhOWFhYjMwZjViM2NlYmIzIiwicHJvZmlsZU5hbWUiOiJTa3VsbENsaWVudFNraW42Iiwic2lnbmF0dXJlUmVxdWlyZWQiOnRydWUsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kNmQ5ZjI1YTdhNGU2Yjc1Y2Y4ZWFhMWRhZWI0N2ZjOTQ4YzU3MTgyNDQxNTY3NTVjODVhNWU2OGI5OGMzZTUifX19</span><span class="w"></span>
+<span class="w">    </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v13zgC1XOdRm5icNeNrg19hcwmGnNFEIs3zKEJqPIJ9MACCFlk8lv9U6d32lPaAc1cPZLcbWpqWzVPyZRUT2qhQrG7+iq+T3Kl64mEaNCzRRVLMGZQj3sveHUd6UCXHQh2KUyoZ6T4zJj90y/0wJW8Mt8NZXxKawxdQEjgxPeqEM4bB3iwYqA5IPWPPvgtdhqy4ZOFITtAhx+0rZ6piwWwrRCs2G0WawfN0pdGaq/c4X5JxCDJftFTeo7+3rs41GXJilGnRE8xt1ANPieS2UNCp4ffu+/tt9yC6IkSQUSHs8NHXi/3bkRZ6LSQ4bQgupaiGrutiEhZO9JOBJGs53C045VrndQX3Hw9njCB4sb5cVkL1ZPYSpK6ou4quHvfaj9DKoG/A3JB9DMwlFGA4odFwu2iz+E/JQebd6OUtW/k++q7hwpt/dfOEm/OdEpsJy8qVTtiCNqEj145wyjnvyhuqi3sh5tr5GQfyx7fahhyjhtyPB+E3ME8AA0DcLNeDpA0CNoGF0DqSIwp52srGzATqgV8hK06QJIJCdsxzuMFSDiV1xtBdDSTrhBa88HCCKNmpxb4HqqiE6QY8SvqJyllKlYOTbfM1SdlcJ5Jk+76c80R1XOAjibeyYfhYsK2vJSysvoLOlHTbNLwHZpzmTDfHGIdl2oH+lokZP++JCGp8=</span><span class="w"></span>
+</code></pre></div>
+</details>
+<h2 id="player-groups">Player Groups</h2>
+<p>Custom player groups can be defined in order to provide a sorting system for players. They
+can be assigned with permissions and have options like the weight in the tab and how to
+display that player in-game. Players can have multiple groups but are prioritised
+by weight. They are defined with the format below.</p>
+<div class="highlight"><span class="filename">groups.yml</span><pre><span></span><code><span class="nt">groupname</span><span class="p">:</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Permission for player to have this group. Set to blank here so all players have it</span><span class="w"></span>
+<span class="w">    </span><span class="nt">permission</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The priority of this group, the player will have the group they qualify for that</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># has the highest weight. A higher weight is a higher priority</span><span class="w"></span>
+<span class="w">    </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">display</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># How to display this group on the tab</span><span class="w"></span>
+<span class="w">        </span><span class="nt">tab</span><span class="p">:</span><span class="w"> </span><span class="c1"># (4)</span><span class="w"></span>
+<span class="w">            </span><span class="nt">animations</span><span class="p">:</span><span class="w"> </span><span class="c1"># (5)</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;8Member</span><span class="nv"> </span><span class="s">&amp;7%player_name%&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"> </span><span class="c1"># (6)</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>This is the name of the group. This doesn't matter as isn't used anywhere else.</p>
+</li>
+<li>
+<p>This is the permission required for the player to have this group. If it is
+    left blank like so that means every player will have this group.</p>
+</li>
+<li>
+<p>This is the weight of this group. If a player has multiple group their assigned
+    group will be the one with the highest weight. If the number is higher that group
+    will be prioritised. E.g, A weight of 99 has higher priorty than a weight of 56.</p>
+</li>
+<li>
+<p>This is the Dynamic Text element to display in the tab for this group. As explained later
+    this is passed through the variable <code>{group_format}</code>.</p>
+</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="nt">owner</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">permission</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tab.owner</span><span class="w"></span>
+<span class="w">    </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99</span><span class="w"></span>
+<span class="w">    </span><span class="nt">display</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">tab</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4Owner</span><span class="nv"> </span><span class="s">&amp;c%player_name%&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;cO&amp;4wner</span><span class="nv"> </span><span class="s">&amp;c%player_name%&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4O&amp;cw&amp;4ner</span><span class="nv"> </span><span class="s">&amp;c%player_name%&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4Ow&amp;cn&amp;4er</span><span class="nv"> </span><span class="s">&amp;c%player_name%&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4Own&amp;ce&amp;4r</span><span class="nv"> </span><span class="s">&amp;c%player_name%&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4Owne&amp;cr</span><span class="nv"> </span><span class="s">&amp;c%player_name%&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="Showcase1" src="../../../assets/img/gif/Showcase1.gif" /></p>
+</details>
+<h2 id="tab-columns">Tab Columns</h2>
+<p>The Tab is comprised of Tab Columns. These are a set of elements that will display. They have the nice feature of pagination
+so you can have multiple pages of elements. Each column can also have a title element to show what each column displays. So simply
+a tab column is a list of elements with a title at the top. They are defined by the following format</p>
+<div class="highlight"><span class="filename">columns/column.yml</span><pre><span></span><code><span class="c1"># Id of this column for referencing it</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;features&quot;</span><span class="w"></span>
+
+<span class="c1"># Page options</span><span class="w"></span>
+<span class="nt">page</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># If enabled, the total number of elements go over</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># the below &#39;elements&#39; option, it will create a new</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># page and display the remaining elements on all the</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># new pages</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Maximum amount of pages to create. If</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># items try to create more than this amount of</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># pages it will stop at this page</span><span class="w"></span>
+<span class="w">  </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Maximum amount of elements per page. If the</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># elements go over this they will flow to the next</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># page</span><span class="w"></span>
+<span class="w">  </span><span class="nt">elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Interval in ticks between scrolling pages. Only applies</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># if there is more than one page</span><span class="w"></span>
+<span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1"># (4)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This is the text element that is displayed at the bottom that indicated the</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># current and maximum pages.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="c1"># (5)</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># These are the different animation frames for</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># this text. Each text element is iterated through</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># to create a dynamic animation.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;7{current_page}&amp;8/&amp;7{max_page}&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># This is the interval (in ticks) between updating</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># animation frames. This is limited by the tab update</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># interval. Recommended being -1 if only</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># has one frame as doesn&#39;t actually animate</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+
+<span class="c1"># The title of this tab column</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="c1"># (6)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># The custom skin for this tab element. There are multiple ways they&#39;re</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># defined. You can set the &#39;name&#39; element here which will take</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># a skin from the skins.yml file. Otherwise you can directly specify the</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># &#39;value&#39; and &#39;signature&#39; like in skins.yml but right here under &#39;skin:&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">skin</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">red</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># These are the different animation frames for</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># this text. Each text element is iterated through</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># to create a dynamic animation. Colors are supported here</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># along with 1.16+ HEX codes. Hex codes can be used with</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># &#39;&amp;#111111&#39;. Here is a good tool for generating gradient</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># text. https://rgb.birdflop.com/</span><span class="w"></span>
+<span class="w">  </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;c&amp;lTab</span><span class="nv"> </span><span class="s">Column</span><span class="nv"> </span><span class="s">Title&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># This is the interval (in ticks) between updating</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># animation frames. This is limited by the tab update</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># interval. Recommended being -1 if only</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># has one frame as doesn&#39;t actually animate</span><span class="w"></span>
+<span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This specifies if the text will be centered. This is good</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># for aesthetics like the title where you want it to be center</span><span class="w"></span>
+<span class="w">  </span><span class="nt">center</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="c1"># Text elements to display for this column</span><span class="w"></span>
+<span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="c1"># (7)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># These are the different text elements in</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># the column. The key doesn&#39;t matter and items are put</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># in the order they are entered</span><span class="w"></span>
+<span class="w">  </span><span class="nt">1</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># These are the different animation frames for</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># this text. Each text element is iterated through</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># to create a dynamic animation. Colors are supported here</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># along with 1.16+ HEX codes. Hex codes can be used with</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># &#39;&amp;#111111&#39;. Here is a good tool for generating gradient</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># text. https://rgb.birdflop.com/</span><span class="w"></span>
+<span class="w">    </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;First</span><span class="nv"> </span><span class="s">Element&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># This is the interval (in ticks) between updating</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># animation frames. This is limited by the tab update</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># interval. Recommended being -1 if only</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># has one frame as doesn&#39;t actually animate</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">2</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;cSecond</span><span class="nv"> </span><span class="s">Element&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4Second</span><span class="nv"> </span><span class="s">Element&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>If this is set to true than if elements are more than the allowed elements extra pages will be created.</p>
+</li>
+<li>
+<p>This is the maximum amount of pages to create.</p>
+</li>
+<li>
+<p>This is the number of elements per page. It controls how long each column is, 20 is recommended</p>
+</li>
+<li>
+<p>This is the interval (in ticks) between changing pages.</p>
+</li>
+<li>
+<p>This is the <a href="#tab-item">tab item</a> to display page information. It is displayed
+    at the bottom of the column where there is more than 1 page.</p>
+</li>
+<li>
+<p>This is the <a href="#tab-item">tab item</a> to display at the top of the column if titles
+    are enabled for the tab.</p>
+</li>
+<li>
+<p>This is a list of <a href="#tab-item">tab items</a> that will display on the tab column. Each is defined
+    by an identifier. This doesn't matter as they are just added in the order they are defined.</p>
+</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;features&quot;</span><span class="w"></span>
+
+<span class="nt">page</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
+<span class="w">    </span><span class="nt">elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"></span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;7{current_page}&amp;8/&amp;7{max_page}&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+
+<span class="nt">title</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">skin</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">red</span><span class="w"></span>
+<span class="w">    </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;c&amp;lFeatures&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">center</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="nt">text</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">1</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;#084cfb&amp;lG&amp;#1d61fb&amp;lr&amp;#3176fc&amp;la&amp;#468bfc&amp;ld&amp;#5ba0fc&amp;li&amp;#6fb4fc&amp;le&amp;#84c9fd&amp;ln&amp;#98defd&amp;lt&amp;#adf3fd&amp;ls&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;2&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;#1d76fb▌</span><span class="nv"> </span><span class="s">&amp;#2578fbA&amp;#2c7afbn&amp;#347cfbi&amp;#3c7ffcm&amp;#4481fca&amp;#4b83fct&amp;#5385fce</span><span class="nv"> </span><span class="s">&amp;#5b87fcy&amp;#6389fco&amp;#6a8bfcu&amp;#728dfcr</span><span class="nv"> </span><span class="s">&amp;#7a90fdt&amp;#8292fde&amp;#8994fdx&amp;#9196fdt&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;#fb6a60▌</span><span class="nv"> </span><span class="s">&amp;#f46d6aA&amp;#ed7075n&amp;#e6737fi&amp;#df768am&amp;#d87994a&amp;#d17c9ft&amp;#ca7fa9e</span><span class="nv"> </span><span class="s">&amp;#c281b4y&amp;#bb84beo&amp;#b487c9u&amp;#ad8ad3r</span><span class="nv"> </span><span class="s">&amp;#a68ddet&amp;#9f90e8e&amp;#9893f3x&amp;#9196fdt&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;3&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">region</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">region1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;4&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">region</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spawn</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;c&amp;lConditional</span><span class="nv"> </span><span class="s">Text&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;5&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">region</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spawn</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;c▌</span><span class="nv"> </span><span class="s">I</span><span class="nv"> </span><span class="s">only</span><span class="nv"> </span><span class="s">appear</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">spawn!&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;6&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;7&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;b&amp;lCustom</span><span class="nv"> </span><span class="s">Skins&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;8&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">skin</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ewogICJ0aW1lc3RhbXAiIDogMTYzODMzMTE3NDI2NCwKICAicHJvZmlsZUlkIiA6ICI2MzMyMDgwZTY3YTI0Y2MxYjE3ZGJhNzZmM2MwMGYxZCIsCiAgInByb2ZpbGVOYW1lIiA6ICJUZWFtSHlkcmEiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzk2ODJjOTM1MmQyMGM4NWUwZWRkOWMwZWExMGY3NDQwZjE3NGI2YjAxMzMyODY5NWZmZTBmOGNiZmY0ZmM4MCIKICAgIH0KICB9Cn0=</span><span class="w"></span>
+<span class="w">        </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wkc6UVNtcmB7dCUcUnbefPJ9+SrFSzJSdCp/c3XxhIA703MImbvF7Iy0p/nEQ0dWNzkzfvu7GcRI/zU61TjLYxzP2VrTbtHnxlsV5Rer/tcUk4M5KZGUxW+SL1K/HMl/1PLZ5KMBKQ9TO0kSPiYvAczVjYHACkYcgE34YJadmqGDrSObdthysVao/od1/BpDtqUHrpj89g5/R+kocAhI6YumImVNBI/vFabnXoindH8kCr/jlrRaRgJn2r1+woWMlT3gJvdrT+bpJwf789/pAOqpHwvzPxnrI+1jQkODpWJF4mpE7NvVYKNb7UyHYChQUlP1CNV1GqKaXaKrQqDWQ2LuhKxsQ/QK5VHbKCWXsrdqOI8KDXpztCgbJCasHsK2SblIIvXwgImvNIJEu7fFxUm1VuEbljFwKv6LXm7jm0Hmj9/4x8QviGUSCu3CAHvKdXf0OAtVrP9QO/x20mFxkeivy4J14OvMj40BTC/BqLTq4SbzLNMAjXwqJqeNywNyzCvmq2BtT+93rHb5XhmbmF/yGbYHQrnumsqU5ON9mdZ88aJy+XfNMZ9UfS0quNzW4eLWvr4NJVEMcVNkNYUsRmG+sAbl71ScJRZfG41HlSSbOXY3YzNBfoWBTLArLfq+r9rsHw0Cnpv8XfVYVTbbmeHTCOdoKOZrLMH1h8C/vZM=</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;b▌</span><span class="nv"> </span><span class="s">Display</span><span class="nv"> </span><span class="s">custom</span><span class="nv"> </span><span class="s">skins&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;9&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;10&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;a&amp;lPing&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;11&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">ping</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ONE</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;a▌</span><span class="nv"> </span><span class="s">Set</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">ping</span><span class="nv"> </span><span class="s">of&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;12&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">ping</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TWO</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;a▌</span><span class="nv"> </span><span class="s">elements</span><span class="nv"> </span><span class="s">like</span><span class="nv"> </span><span class="s">so&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;19&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;</span><span class="nv"> </span><span class="s">&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;13&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d&amp;lInfo&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;14&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">Feel</span><span class="nv"> </span><span class="s">free</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">browse</span><span class="nv"> </span><span class="s">the&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;15&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">wiki</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">find</span><span class="nv"> </span><span class="s">out</span><span class="nv"> </span><span class="s">how&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;16&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">powerful</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">&amp;5p&amp;dowerful</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">p&amp;5o&amp;dwerful</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">po&amp;5w&amp;derful</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">pow&amp;5e&amp;drful</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">powe&amp;5r&amp;dful</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">power&amp;5f&amp;dul</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">powerf&amp;5u&amp;dl</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">powerfu&amp;5l</span><span class="nv"> </span><span class="s">&amp;dthe</span><span class="nv"> </span><span class="s">plugin&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
+<span class="w">    </span><span class="s">&#39;17&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;d▌</span><span class="nv"> </span><span class="s">really</span><span class="nv"> </span><span class="s">is!&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="Showcase5" src="../../../assets/img/gif/Showcase5.gif" /></p>
+</details>
+<h2 id="tab-lists">Tab Lists</h2>
+<p>Tab Lists are another type of Tab Column excpet instead of speicfy elements it's a list of elements and you specify how
+each element is represented. It has the same pagniation features for multiple pages and the ability to specify a title to
+display at the top. They are defined the same as tab columns except with some extra options and the text is done differently.</p>
+<p>Online Player Tab Lists can have a <a href="#requirement">requirement</a> option which will filter players in that list.</p>
+<p>You can set an Online Player Tab List for multiple columns and the players will span across those columns. Make sure
+to set the <code>page.enabled</code> option for the list to <code>false</code> to avoid it trying to change page.</p>
+<div class="highlight"><span class="filename">lists/list.yml</span><pre><span></span><code><span class="c1"># Id of this column for referencing it</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;online_list&quot;</span><span class="w"></span>
+
+<span class="c1"># Page options</span><span class="w"></span>
+<span class="nt">page</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># If enabled, the total number of elements go over</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># the below &#39;elements&#39; option, it will create a new</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># page and display the remaining elements on all the</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># new pages</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># If using an online_list across multiple columns, this option</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># should be set to false so it doesn&#39;t try to change pages</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Maximum amount of pages to create. If</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># items try to create more than this amount of</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># pages it will stop at this page</span><span class="w"></span>
+<span class="w">  </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Maximum amount of elements per page. If the</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># elements go over this they will flow to the next</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># page</span><span class="w"></span>
+<span class="w">  </span><span class="nt">elements</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Interval in ticks between scrolling pages. Only applies</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># if there is more than one page</span><span class="w"></span>
+<span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This is the text element that is displayed at the bottom that indicated the</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># current and maximum pages.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># These are the different animation frames for</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># this text. Each text element is iterated through</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># to create a dynamic animation.</span><span class="w"></span>
+<span class="w">    </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;7{current_page}&amp;8/&amp;7{max_page}&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># This is the interval (in ticks) between updating</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># animation frames. This is limited by the tab update</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># interval. Recommended being -1 if only</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># has one frame as doesn&#39;t actually animate</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+
+<span class="c1"># The title of this tab column</span><span class="w"></span>
+<span class="nt">title</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># The custom skin for this tab element. There are multiple ways they&#39;re</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># defined. You can set the &#39;name&#39; element here which will take</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># a skin from the skins.yml file. Otherwise you can directly specify the</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># &#39;value&#39; and &#39;signature&#39; like in skins.yml but right here under &#39;skin:&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">skin</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">green</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># These are the different animation frames for</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># this text. Each text element is iterated through</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># to create a dynamic animation. Colors are supported here</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># along with 1.16+ HEX codes. Hex codes can be used with</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># &#39;&amp;#111111&#39;. Here is a good tool for generating gradient</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># text. https://rgb.birdflop.com/</span><span class="w"></span>
+<span class="w">  </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;a&amp;lOnline</span><span class="nv"> </span><span class="s">&amp;2%server_online%&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># This is the interval (in ticks) between updating</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># animation frames. This is limited by the tab update</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># interval. Recommended being -1 if only</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># has one frame as doesn&#39;t actually animate</span><span class="w"></span>
+<span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># This specifies if the text will be centered. This is good</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># for aesthetics like the title where you want it to be center</span><span class="w"></span>
+<span class="w">  </span><span class="nt">center</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="c1"># What the list consists of. Here put</span><span class="w"></span>
+<span class="c1"># the element. Can put custom ones from addons</span><span class="w"></span>
+<span class="c1"># Types: online_players</span><span class="w"></span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">online_players</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+
+<span class="c1"># In what order to display elements</span><span class="w"></span>
+<span class="c1"># Put a custom sorter</span><span class="w"></span>
+<span class="c1"># Sorters: distance, number_variable, weight</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># distance: The closest players to you are near the top</span><span class="w"></span>
+<span class="c1"># number_variable: A higher number appears higher</span><span class="w"></span>
+<span class="c1">#                  Taken from &#39;sort-variable&#39;</span><span class="w"></span>
+<span class="c1"># weight: Uses weight taken from the player group</span><span class="w"></span>
+<span class="c1">#         See &#39;groups.yml&#39;. Higher weight appears at the top</span><span class="w"></span>
+<span class="nt">sorter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">weight</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+
+<span class="c1"># This will be used for number_variable</span><span class="w"></span>
+<span class="c1"># to sort by number. Can use placeholders</span><span class="w"></span>
+<span class="c1"># so the value of the placeholder is used</span><span class="w"></span>
+<span class="nt">sort-variable</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+
+<span class="c1"># Will only allow players with tab.online permission</span><span class="w"></span>
+<span class="c1"># to show in list</span><span class="w"></span>
+<span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">permission</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tab.online</span><span class="w"></span>
+
+<span class="c1"># Text for each element in the list</span><span class="w"></span>
+<span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="c1"># (4)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># These are the different animation frames for</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># this text. Each text element is iterated through</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># to create a dynamic animation. Colors are supported here</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># along with 1.16+ HEX codes. Hex codes can be used with</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># &#39;&amp;#111111&#39;. Here is a good tool for generating gradient</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># text. https://rgb.birdflop.com/</span><span class="w"></span>
+<span class="w">  </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;{group_format}&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># This is the interval (in ticks) between updating</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># animation frames. This is limited by the tab update</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># interval. Recommended being -1 if only</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># has one frame as doesn&#39;t actually animate</span><span class="w"></span>
+<span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>This is the type of this list. Currently the only type is <code>online_players</code> which is a list of online players.</p>
+</li>
+<li>
+<p>This is the sorter for the list. The function is defined in the comments.</p>
+</li>
+<li>
+<p>This is the sort variable if <code>number_variable</code> is chosen. Use a placeholder from PlaceholderAPI and the highest
+    numbers will appear at the top.</p>
+</li>
+<li>
+<p>This is a <a href="#dynamic-text">dynamic text</a> element to display for each object in the list. Use placeholders to make
+    it unique for each object. Use the placeholder <code>{group_format}</code> to take the tab display from the player's group.</p>
+</li>
+</ol>
+<h2 id="tabs">Tabs</h2>
+<p>Tabs are the actual elements that are displayed to the user. For these you specify the columns to display for this tab along
+with the headers and footers of the tab. You can have multiple tabs that change out depending on what situation the player is in. They are defined with the following format.</p>
+<div class="highlight"><span class="filename">tabs/default.yml</span><pre><span></span><code><span class="c1"># ID of this tab for referencing it</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;default&quot;</span><span class="w"></span>
+
+<span class="c1"># Requirement needed to view this tab</span><span class="w"></span>
+<span class="nt">requirement</span><span class="p">:</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">permission</span><span class="w"></span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"></span>
+
+<span class="c1"># The weight of this tab. This controls the</span><span class="w"></span>
+<span class="c1"># priority this tab is displayed if the player</span><span class="w"></span>
+<span class="c1"># meets overlapping requirements.</span><span class="w"></span>
+<span class="c1"># Higher number means higher priority</span><span class="w"></span>
+<span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+
+<span class="c1"># Options for columns displayed in this tab</span><span class="w"></span>
+<span class="nt">columns</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Whether to display titles at the top of each column.</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Adds the title then a blank spot then begins column text</span><span class="w"></span>
+<span class="w">  </span><span class="nt">display-titles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># The minimum width of each element in the tab.</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># If there are no elements the columns will be at least this width.</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># If elements are over this text length they will be trimmed</span><span class="w"></span>
+<span class="w">  </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w"> </span><span class="c1"># (4)</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># The columns to display in this tab mapped to</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># their slot. The tab will be as wide as there are many columns.</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># MAXIMUM of 4 columns on one tab</span><span class="w"></span>
+<span class="w">  </span><span class="nt">list</span><span class="p">:</span><span class="w"> </span><span class="c1"># (5)</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># The number is which slot to display the column in</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># and the value is the name of the column</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># These here would make the tab 4 columns wide</span><span class="w"></span>
+<span class="w">    </span><span class="nt">1</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;online_list&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">2</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;player_info&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">3</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;server_info&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">4</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;features&quot;</span><span class="w"></span>
+
+<span class="c1"># The tab header. This is displayed at the top</span><span class="w"></span>
+<span class="c1"># of the tab above all columns</span><span class="w"></span>
+<span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="c1"># (6)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Text to display in the header</span><span class="w"></span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># These are the different text elements in</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># the column. The key doesn&#39;t matter and items are put</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># in the order they are entered</span><span class="w"></span>
+<span class="w">    </span><span class="nt">1</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># These are the different animation frames for</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># this text. Each text element is iterated through</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># to create a dynamic animation. Colors are supported here</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># along with 1.16+ HEX codes. Hex codes can be used with</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># &#39;&amp;#111111&#39;. Here is a good tool for generating gradient</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># text. https://rgb.birdflop.com/</span><span class="w"></span>
+<span class="w">      </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># This is the interval (in ticks) between updating</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># animation frames. This is limited by the tab update</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># interval. Recommended being -1 if only</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># has one frame as doesn&#39;t actually animate</span><span class="w"></span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">2</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecraft</span><span class="nv"> </span><span class="s">Server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lM&amp;9&amp;li&amp;b&amp;lnecraft</span><span class="nv"> </span><span class="s">Server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMi&amp;9&amp;ln&amp;b&amp;lecraft</span><span class="nv"> </span><span class="s">Server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMin&amp;9&amp;le&amp;b&amp;lcraft</span><span class="nv"> </span><span class="s">Server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMine&amp;9&amp;lc&amp;b&amp;lraft</span><span class="nv"> </span><span class="s">Server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinec&amp;9&amp;lr&amp;b&amp;laft</span><span class="nv"> </span><span class="s">Server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecr&amp;9&amp;la&amp;b&amp;lft</span><span class="nv"> </span><span class="s">Server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecra&amp;9&amp;lf&amp;b&amp;lt</span><span class="nv"> </span><span class="s">Server&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecraf&amp;9&amp;lt</span><span class="nv"> </span><span class="s">&amp;b&amp;lServer&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecraft</span><span class="nv"> </span><span class="s">&amp;9&amp;lS&amp;b&amp;lerver&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecraft</span><span class="nv"> </span><span class="s">S&amp;9&amp;le&amp;b&amp;lrver&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecraft</span><span class="nv"> </span><span class="s">Se&amp;9&amp;lr&amp;b&amp;lver&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecraft</span><span class="nv"> </span><span class="s">Ser&amp;9&amp;lv&amp;b&amp;ler&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecraft</span><span class="nv"> </span><span class="s">Serv&amp;9&amp;le&amp;b&amp;lr&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;b&amp;lMinecraft</span><span class="nv"> </span><span class="s">Serve&amp;9&amp;lr&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
+<span class="w">    </span><span class="nt">3</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;7&amp;o((</span><span class="nv"> </span><span class="s">With</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">new</span><span class="nv"> </span><span class="s">tab</span><span class="nv"> </span><span class="s">experience</span><span class="nv"> </span><span class="s">))&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">4</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+
+<span class="c1"># The tab footer. This is displayed at the bottom</span><span class="w"></span>
+<span class="c1"># of the tab below all columns</span><span class="w"></span>
+<span class="nt">footer</span><span class="p">:</span><span class="w"> </span><span class="c1"># (7)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Text to display in the footer</span><span class="w"></span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">0</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">2</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;c&amp;lSTOREWIDE</span><span class="nv"> </span><span class="s">SALE</span><span class="nv"> </span><span class="s">25%</span><span class="nv"> </span><span class="s">OFF&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;4&amp;lSTOREWIDE</span><span class="nv"> </span><span class="s">SALE</span><span class="nv"> </span><span class="s">25%</span><span class="nv"> </span><span class="s">OFF&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+<span class="w">    </span><span class="nt">3</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&amp;c/buy</span><span class="nv"> </span><span class="s">&amp;for</span><span class="nv"> </span><span class="s">visit</span><span class="nv"> </span><span class="s">&amp;cbuy.server.com&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">99</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>This is the <a href="#requirement">requirement</a> for this tab to display to the player.</p>
+</li>
+<li>
+<p>This is the weight of this tab. If a player meets the requirements for multiple tabs, they 
+    will have the one with the highest weight. If the number is higher that tab
+    will be prioritised. E.g, A weight of 99 has higher priorty than a weight of 56.</p>
+</li>
+<li>
+<p>This is if each tab column will display a title at the top defined in their <code>title</code> property.</p>
+</li>
+<li>
+<p>This is the maximum width for each element on the tab. Anything above will be trimmed.</p>
+</li>
+<li>
+<p>This is a list of columns to display on the tab. Each is defined like so where the slot it is in
+    is mapped to the id, <code>slot:column_id</code>.</p>
+</li>
+<li>
+<p>This is a list of <a href="#dynamic-text">dynamic text</a> elements that display in the header of the tab.</p>
+</li>
+<li>
+<p>This is a list of <a href="#dynamic-text">dynamic text</a> elements that display in the footer of the tab.</p>
+</li>
+</ol>
+<h2 id="components">Components</h2>
+<p>Alot of configuration options take the format of certain components. This will explain
+the format for each component so you can refer to here when it mentions it uses that component.</p>
+<h3 id="dynamic-text">Dynamic Text</h3>
+<p>Dynamic text is a text element that animated. It contains several frames along with the interval
+between changing frames. The format is as follows.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># These are the different animation frames for</span><span class="w"></span>
+<span class="c1"># this text. Each text element is iterated through</span><span class="w"></span>
+<span class="c1"># to create a dynamic animation. Colors are supported here</span><span class="w"></span>
+<span class="c1"># along with 1.16+ HEX codes. Hex codes can be used with</span><span class="w"></span>
+<span class="c1"># &#39;&amp;#111111&#39;. Here is a good tool for generating gradient</span><span class="w"></span>
+<span class="c1"># text. https://rgb.birdflop.com/</span><span class="w"></span>
+<span class="nt">animations</span><span class="p">:</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;First</span><span class="nv"> </span><span class="s">Frame&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Second</span><span class="nv"> </span><span class="s">Frame&#39;</span><span class="w"></span>
+<span class="c1"># This is the interval (in ticks) between updating</span><span class="w"></span>
+<span class="c1"># animation frames. This is limited by the tab update</span><span class="w"></span>
+<span class="c1"># interval. Recommended being -1 if only</span><span class="w"></span>
+<span class="c1"># has one frame as doesn&#39;t actually animate</span><span class="w"></span>
+<span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>This a list of string elements that are the frames.</p>
+</li>
+<li>
+<p>This is the time in ticks before each frame will change to the next. This is recommended to be set at -1
+    if there is only 1 frame so the plugin doesn't bother updating it.</p>
+</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;#1d76fb▌</span><span class="nv"> </span><span class="s">&amp;#2578fbA&amp;#2c7afbn&amp;#347cfbi&amp;#3c7ffcm&amp;#4481fca&amp;#4b83fct&amp;#5385fce</span><span class="nv"> </span><span class="s">&amp;#5b87fcy&amp;#6389fco&amp;#6a8bfcu&amp;#728dfcr</span><span class="nv"> </span><span class="s">&amp;#7a90fdt&amp;#8292fde&amp;#8994fdx&amp;#9196fdt&#39;</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;#fb6a60▌</span><span class="nv"> </span><span class="s">&amp;#f46d6aA&amp;#ed7075n&amp;#e6737fi&amp;#df768am&amp;#d87994a&amp;#d17c9ft&amp;#ca7fa9e</span><span class="nv"> </span><span class="s">&amp;#c281b4y&amp;#bb84beo&amp;#b487c9u&amp;#ad8ad3r</span><span class="nv"> </span><span class="s">&amp;#a68ddet&amp;#9f90e8e&amp;#9893f3x&amp;#9196fdt&#39;</span><span class="w"></span>
+<span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="Showcase2" src="../../../assets/img/gif/Showcase2.gif" /></p>
+</details>
+<h3 id="tab-item">Tab Item</h3>
+<p>A tab item is an element that displays in each of the columns. It contains a Dynamic Text
+element along with options for custom skins and centered text. The format is as follows.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">item</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ping</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FIVE</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">center</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">skin</span><span class="p">:</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SKIN NAME&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SKIN VALUE&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">signature</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SKIN SIGNATURE&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">requirement</span><span class="p">:</span><span class="w"> </span><span class="c1"># (4)</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string equals</span><span class="w"></span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%player_name%&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IlluzionzDev</span><span class="w"></span>
+<span class="w">    </span><span class="nt">animations</span><span class="p">:</span><span class="w"> </span><span class="c1"># (5)</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;First</span><span class="nv"> </span><span class="s">Frame&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;Second</span><span class="nv"> </span><span class="s">Frame&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>This is the ping to display for this element. The options are <code>ONE, TWO, THREE, FOUR, FIVE</code> for the different ping bars in the tablist.</p>
+</li>
+<li>
+<p>This is if the text should be a centered element in the tab.
+    <img alt="Showcase3" src="../../../assets/img/Showcase3.png" /></p>
+</li>
+<li>
+<p>This is the custom skin for this element. The <code>name</code> parameter tries to find a <a href="#custom-skins">custom skin</a> defined in <code>skins.yml</code>.
+    If you want to implement a specfic skin just for this element you can directly specify the <code>value</code> and <code>signature</code> here.</p>
+</li>
+<li>
+<p>This is the <a href="#requirement">requirement</a> for this tab element to display. If conditions aren't met it won't be displayed.</p>
+</li>
+<li>
+<p>This is the <a href="#dynamic-text">dynamic text</a> element of the tab item.</p>
+</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="s">&#39;4&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;e▌</span><span class="nv"> </span><span class="s">Coins:</span><span class="nv"> </span><span class="s">&amp;6%vault_eco_balance_commas%&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span><span class="w"></span>
+<span class="s">&#39;5&#39;</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">animations</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;e▌</span><span class="nv"> </span><span class="s">Add</span><span class="nv"> </span><span class="s">more</span><span class="nv"> </span><span class="s">here...&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;e▌</span><span class="nv"> </span><span class="s">Add</span><span class="nv"> </span><span class="s">more</span><span class="nv"> </span><span class="s">here&amp;6&amp;l.&amp;e..&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;e▌</span><span class="nv"> </span><span class="s">Add</span><span class="nv"> </span><span class="s">more</span><span class="nv"> </span><span class="s">here.&amp;6&amp;l.&amp;e.&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;&amp;e▌</span><span class="nv"> </span><span class="s">Add</span><span class="nv"> </span><span class="s">more</span><span class="nv"> </span><span class="s">here..&amp;6&amp;l.&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="Showcase4" src="../../../assets/img/gif/Showcase4.gif" /></p>
+</details>
+<h3 id="requirement">Requirement</h3>
+<p>Some items in the tab will have requirements to display. These are custom checks that have
+alot of power to display tabs and elements in certain scenarios for a more dynamic tab. They
+are defined with the following format below and then each type will be expained.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;REQUIREMENT TYPE&gt;</span><span class="w"> </span><span class="c1"># (1)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;FIRST INPUT&gt;</span><span class="w"> </span><span class="c1"># (2)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SECOND INPUT&gt;</span><span class="w"> </span><span class="c1"># (3)</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>
+<p>This is where you specify the type of requirement check.</p>
+</li>
+<li>
+<p>This is the first input value. This is at least needed for every type.</p>
+</li>
+<li>
+<p>This is the secondary input value. Only some types need it and it is for more
+    comparision checks like numbers or strings.</p>
+</li>
+</ol>
+<h4 id="permission">Permission</h4>
+<p>This checks if the player has the given permission.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">permission</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;permission to check&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="region">Region</h4>
+<p>This checks if the player is in a given WorldGuard region.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">region</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;region to check&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="experience">Experience</h4>
+<p>This checks if the player has at least a certain amount of experience points.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exp</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;experience points&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="near">Near</h4>
+<p>This checks if the player is within range of certain coordinates.
+The format for <code>location</code> is <code>worldname,x,y,z</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">near</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;location&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;distance&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="string-equals">String Equals</h4>
+<p>This checks if a certain string is exactly equal to another. Pass in values through PlaceholderAPI.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string equals</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;input string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string to compare to&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="string-equals-ignorecase">String Equals Ignorecase</h4>
+<p>This checks if a certain string is equal to another ignoring case. Pass in values through PlaceholderAPI.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string equals ignorecase</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;input string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string to compare to&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="string-contains">String Contains</h4>
+<p>This checks if a certain string contains another string. Pass in values through PlaceholderAPI.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string contains</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;input string&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;string to see if contains&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="regex">Regex</h4>
+<p>This checks if a regular expression matches the given text.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regex</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;the string to match with&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;the regex expression&gt;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="comparison-operators">Comparison Operators</h4>
+<p>This checks how certain numbers compare to each other. Avaiable operations are <code>==, &gt;=, &lt;=, !=, &gt;, &lt;</code>.
+Pass in values through PlaceholderAPI.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">requirement</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">==, &gt;=, &lt;=, !=, &gt;, &lt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;first number to check&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;second number to check&gt;</span><span class="w"></span>
+</code></pre></div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021-2022 Illuzionz Studios
+          </div>
+        
+        
+        
+      </div>
+      <div class="md-social">
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "pymdownx.highlight", "pymdownx.inlinehilite", "pymdownx.superfences", "pymdownx.snippets", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
